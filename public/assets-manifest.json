@@ -1,0 +1,31 @@
+{
+  "authored_assets": [
+    {
+      "path": "forge-mark.svg",
+      "source": "Original FORGE Cartesian-axis mark, authored for this application"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Inter",
+      "package": "@fontsource/inter",
+      "version": "5.3.0",
+      "license": "SIL Open Font License 1.1",
+      "notice": "/licenses/inter-OFL.txt"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "package": "@fontsource/ibm-plex-mono",
+      "version": "5.2.7",
+      "license": "SIL Open Font License 1.1",
+      "notice": "/licenses/ibm-plex-mono-OFL.txt"
+    }
+  ],
+  "icons": {
+    "package": "lucide-react",
+    "version": "0.548.0",
+    "license": "ISC",
+    "notice": "/licenses/lucide-ISC.txt"
+  },
+  "scene": "Procedural replay of authoritative local simulator geometry and sampled body poses; browser performs no task physics."
+}

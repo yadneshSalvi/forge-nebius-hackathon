@@ -1,0 +1,39 @@
+{
+  "name": "forge-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:web": "vite --host 127.0.0.1 --port 4401 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --host 127.0.0.1 --port 4401 --strictPort",
+    "test:ui": "node web/qa.mjs",
+    "format": "prettier --write web public/assets-manifest.json package.json tsconfig.json vite.config.ts",
+    "format:check": "prettier --check web public/assets-manifest.json package.json tsconfig.json vite.config.ts",
+    "start": ".venv/bin/python scripts/run.py",
+    "test": ".venv/bin/python -m pytest -q",
+    "test:replay": "node web/qa-replay.mjs"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "5.2.7",
+    "@fontsource/inter": "5.3.0",
+    "@react-three/fiber": "9.8.2",
+    "lucide-react": "0.548.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
+    "@playwright/test": "1.64.1",
+    "@types/node": "22.18.12",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@types/three": "0.183.1",
+    "@vitejs/plugin-react": "5.1.0",
+    "prettier": "3.9.10",
+    "typescript": "5.9.3",
+    "vite": "7.3.7"
+  }
+}
