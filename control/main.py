@@ -94,7 +94,9 @@ def bootstrap():
     keys = ("id","name","status","stage","generation","created_at","updated_at","progress","recorded","config","error")
     summaries = [{k: c.get(k) for k in keys} for c in campaigns]
     base = base_index()
-    return {"task": task_spec(), "runtime": runtime_lock(), "protocol": PROTOCOL, "protocol_sha": PROTOCOL_SHA, "campaigns": summaries, "selected_campaign_id": summaries[0]["id"] if summaries else None, "providers": providers.status(), "policies": [{"id":"base", "label":"Base waypoint MLP", "checkpoint_sha":base["checkpoint_sha"]}] if base else [], "base_ready":bool(base)}
+    from .intervention_planner import provider_status
+    routes = [p for p in providers.status() if p["purpose"] != "submission"] + provider_status(store)
+    return {"task": task_spec(), "runtime": runtime_lock(), "protocol": PROTOCOL, "protocol_sha": PROTOCOL_SHA, "campaigns": summaries, "selected_campaign_id": summaries[0]["id"] if summaries else None, "providers": routes, "policies": [{"id":"base", "label":"Base waypoint MLP", "checkpoint_sha":base["checkpoint_sha"]}] if base else [], "base_ready":bool(base)}
 
 @app.get("/api/campaigns")
 def campaigns(): return [enrich(c) for c in store.list_campaigns()]
@@ -175,3 +177,18 @@ def image(cid: str,name: Literal["source.png","minimized.png"]):
     path=store.path/"renders"/cid/name
     if not path.is_file():raise HTTPException(404,"Rendered frame not available")
     return FileResponse(path,media_type="image/png")
+
+# Additive diagnostics never modify the historical scientific evidence tables.
+from .incident_api import routes as incident_routes
+app.include_router(incident_routes(lambda: store, require_key))
+
+@app.get("/api/intervention-plans")
+def intervention_plans():
+    from .intervention_planner import list_plans
+    return list_plans(store)
+
+@app.get("/api/integrations/groot")
+def groot_qualification_contract():
+    from integrations.groot.contract import digest, load_contract
+    contract = load_contract()
+    return {"contract": contract, "contract_sha256": digest(contract), "qualified": False}

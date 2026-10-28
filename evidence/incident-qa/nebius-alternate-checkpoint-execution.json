@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "seconds": 2.68,
+  "environment": "/private/var/folders/7c/2w_8g2bs7m72pq5v461b05zw0000gn/T/forge-incident-replay-5tuwflgo/venv/bin/python",
+  "provider_credentials_present": false,
+  "database_created": false,
+  "scope": "Fresh diagnostic using a separately chosen compatible existing checkpoint; no original outcome guarantee"
+}

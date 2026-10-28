@@ -1,0 +1,49 @@
+{
+  "status": "not_qualified",
+  "label": "GR00T N1.7 / LIBERO Panda",
+  "scope": "GPU qualification package; no GR00T inference, training or LIBERO episode has run in Forge",
+  "source_revision": "944fe70c4fd54e3fcb80a7d7258a328f9c061176",
+  "checkpoint_revision": "2ea293aa20ba7cf5bbf3ba17a5fbcb1a01cbfe21",
+  "checkpoint": "nvidia/GR00T-N1.7-LIBERO/libero_10",
+  "embodiment": "LIBERO_PANDA",
+  "gates": [
+    {
+      "id": "compute",
+      "status": "pending",
+      "required_evidence": "Actual GPU identity,driver,VRAM and permitted job interface"
+    },
+    {
+      "id": "access",
+      "status": "pending",
+      "required_evidence": "Exact checkpoint/backbone files and accepted model terms"
+    },
+    {
+      "id": "runtime",
+      "status": "pending",
+      "required_evidence": "Locked dependencies,headless rendering and real open-loop action output"
+    },
+    {
+      "id": "closed_loop",
+      "status": "pending",
+      "required_evidence": "Nominal episodes with camera/action/controller binding"
+    },
+    {
+      "id": "adaptation",
+      "status": "pending",
+      "required_evidence": "Actual changed action-model tensors,reload and same-adapter episodes"
+    },
+    {
+      "id": "evidence",
+      "status": "pending",
+      "required_evidence": "Passing/failing observations,proposed/executed actions,sim states and predicates"
+    },
+    {
+      "id": "operations",
+      "status": "pending",
+      "required_evidence": "Authenticated remote access,cancel/recovery,artifact transfer and stale-result fencing"
+    }
+  ],
+  "candidate_incident_discovered": false,
+  "source_url": "https://github.com/NVIDIA/Isaac-GR00T/blob/944fe70c4fd54e3fcb80a7d7258a328f9c061176/examples/LIBERO/README.md",
+  "blocker": "CUDA host and gated Cosmos backbone access have not been qualified."
+}

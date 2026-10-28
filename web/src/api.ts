@@ -189,9 +189,14 @@ export function useEpisode(id?: string) {
     setError("");
     if (!id || episodeCache.has(id)) return;
     const abort = new AbortController();
-    request<Episode>(`/episodes/${encodeURIComponent(id)}`, {
-      signal: abort.signal,
-    })
+    request<Episode>(
+      id.startsWith("/api/incidents/")
+        ? id.slice(4)
+        : `/episodes/${encodeURIComponent(id)}`,
+      {
+        signal: abort.signal,
+      },
+    )
       .then((result) => {
         episodeCache.set(id, result);
         setEpisode(result);

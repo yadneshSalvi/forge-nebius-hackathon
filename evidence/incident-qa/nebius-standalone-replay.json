@@ -1,0 +1,4028 @@
+{
+  "valid": true,
+  "files": 81,
+  "attempts": 42,
+  "pairs": 21,
+  "dense_oracle_audits": 3,
+  "status": "completed",
+  "summary": {
+    "anchor_pairs": 1,
+    "assessment": "fewer_failures_under_tested_intervention",
+    "fresh_pairs": 20,
+    "interpretation": "Paired diagnostic draws at this chosen scene; conservative 95% difference interval excludes source-seed anchor. Abstain when it overlaps zero. No release or generalization claim.",
+    "intervention_successes": 20,
+    "original_successes": 0,
+    "paired_effect": {
+      "delta": 1.0,
+      "delta_interval": [
+        0.6064806405907491,
+        1.0
+      ],
+      "interval_method": "Conservative paired difference: simultaneous Clopper\u2013Pearson bounds on rescue and regression probabilities; one-sided 95% nominal gate uses Bonferroni tails .025.",
+      "nominal_lower_95": 0.6631330580338294,
+      "paired": {
+        "both_failure": 0,
+        "both_success": 0,
+        "regressed": 0,
+        "rescued": 20
+      },
+      "total": 20
+    },
+    "regressions": 0,
+    "rescues": 20
+  },
+  "label": "Post-final diagnostic \u00b7 initial-scene paired reset",
+  "runtime_dependencies_match": true,
+  "runtime_dependency_differences": {},
+  "replay_absolute_tolerance": 1e-06,
+  "replay_relative_tolerance": 1e-07,
+  "platform": {
+    "recorded": {
+      "os": "Darwin",
+      "os_version": "26.5.2",
+      "machine": "arm64"
+    },
+    "current": {
+      "os": "Darwin",
+      "os_version": "26.5.2",
+      "machine": "arm64"
+    }
+  },
+  "reruns": [
+    {
+      "trial_index": 0,
+      "seed": 522552,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "8fd3f833ad93843a826fcb1469c0c5447c4fc8df8cfc0fe60640eab52cb8f10f",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "bd0da45d5d935ebd34482730f7852f07ed13b336585b5d609fb5a2d85c036448",
+        "intervention_initial_state_sha": "7b9634f3994ac01f6fc0f5745318d5d15734911c64651b80da6289ec0c45b60c",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "5ceed4f89acbda60c47fff00c1f1d8b2a0c6f05560864a49f741706c4af9a989",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.1378068552980988,
+          "protected_max_displacement": 0.13207690132712147,
+          "protected_max_angle": 2.27005325442977,
+          "stable_duration": 2.973999999999894,
+          "final_payload_position": [
+            0.1996421723551965,
+            0.06998751521331205,
+            0.032990412242408625
+          ],
+          "final_payload_quaternion": [
+            0.9999999942415667,
+            1.2010152491384755e-17,
+            -3.095888286812334e-19,
+            0.00010731666434856324
+          ],
+          "final_payload_corners": [
+            [
+              0.17564603630790038,
+              0.051982364428060174,
+              0.007990412242408623
+            ],
+            [
+              0.17564603630790038,
+              0.051982364428060174,
+              0.057990412242408626
+            ],
+            [
+              0.17563830950811177,
+              0.08798236359884579,
+              0.007990412242408623
+            ],
+            [
+              0.17563830950811177,
+              0.08798236359884579,
+              0.057990412242408626
+            ],
+            [
+              0.2236460352022812,
+              0.05199266682777831,
+              0.007990412242408623
+            ],
+            [
+              0.2236460352022812,
+              0.05199266682777831,
+              0.057990412242408626
+            ],
+            [
+              0.2236383084024926,
+              0.08799266599856392,
+              0.007990412242408623
+            ],
+            [
+              0.2236383084024926,
+              0.08799266599856392,
+              0.057990412242408626
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.5982264107452406e-15,
+          "final_angular_speed": 8.152053647523386e-16,
+          "forbidden_contact_steps": 211,
+          "forbidden_contact_points": 239,
+          "forbidden_normal_impulse": 1.656915143942231,
+          "peak_forbidden_normal_force": 102.44646085969764,
+          "first_violation": {
+            "step": 1971,
+            "time": 3.942,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 7.133753281599714,
+            "position": [
+              -0.024911903800641948,
+              0.026440315513266054,
+              0.1281028295993428
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "3ef69e247840161b0623db3962d1871917847a9a5abe27a7b62b26b1bbfc1318",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12431479075532653,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.973999999999894,
+          "final_payload_position": [
+            0.1996483545679075,
+            0.0700146456664826,
+            0.03299041224240869
+          ],
+          "final_payload_quaternion": [
+            0.9999999928583772,
+            1.1238690082276865e-17,
+            -1.3236815616599516e-19,
+            -0.00011951253700466416
+          ],
+          "final_payload_corners": [
+            [
+              0.17564405280220188,
+              0.052020382782414734,
+              0.007990412242408686
+            ],
+            [
+              0.17564405280220188,
+              0.052020382782414734,
+              0.05799041224240869
+            ],
+            [
+              0.17565265770480476,
+              0.088020381754021,
+              0.007990412242408686
+            ],
+            [
+              0.17565265770480476,
+              0.088020381754021,
+              0.05799041224240869
+            ],
+            [
+              0.22364405143101024,
+              0.052008909578944225,
+              0.007990412242408686
+            ],
+            [
+              0.22364405143101024,
+              0.052008909578944225,
+              0.05799041224240869
+            ],
+            [
+              0.22365265633361311,
+              0.08800890855055048,
+              0.007990412242408686
+            ],
+            [
+              0.22365265633361311,
+              0.08800890855055048,
+              0.05799041224240869
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.5954102597217833e-15,
+          "final_angular_speed": 1.0832086107667183e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 1,
+      "seed": 1099281189,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "2cc879d5352542d4b5918c33b7069b6a317eec669ca563fac33c96c535217b32",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "e234c8de263063906a4db6187c4e0d5a393d442f1c88da571a9248cf84ae2212",
+        "intervention_initial_state_sha": "aa0845257d136e2a49eb71d1ea46efef52ac7ab120a6577eb82f86ee15d4da49",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "321f9d7ab941eb9acf17343c098259770bc7da3c469ac7875974a10524f6ac12",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13770209607941516,
+          "protected_max_displacement": 0.13111656227682655,
+          "protected_max_angle": 2.2908948342432223,
+          "stable_duration": 2.9599999999998956,
+          "final_payload_position": [
+            0.19922971574918705,
+            0.06990943929890982,
+            0.032990412242408604
+          ],
+          "final_payload_quaternion": [
+            0.9999996451711214,
+            1.2307911856013192e-17,
+            3.7291849915382277e-19,
+            0.0008424117935669338
+          ],
+          "final_payload_corners": [
+            [
+              0.17526007662656087,
+              0.05186902909484106,
+              0.007990412242408602
+            ],
+            [
+              0.17526007662656087,
+              0.05186902909484106,
+              0.057990412242408605
+            ],
+            [
+              0.1751994229989457,
+              0.0878689779994917,
+              0.007990412242408602
+            ],
+            [
+              0.1751994229989457,
+              0.0878689779994917,
+              0.057990412242408605
+            ],
+            [
+              0.2232600084994284,
+              0.051949900598327936,
+              0.007990412242408602
+            ],
+            [
+              0.2232600084994284,
+              0.051949900598327936,
+              0.057990412242408605
+            ],
+            [
+              0.22319935487181322,
+              0.08794984950297857,
+              0.007990412242408602
+            ],
+            [
+              0.22319935487181322,
+              0.08794984950297857,
+              0.057990412242408605
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.2086577378016734e-15,
+          "final_angular_speed": 1.2273413959571388e-15,
+          "forbidden_contact_steps": 106,
+          "forbidden_contact_points": 126,
+          "forbidden_normal_impulse": 1.1404362393359992,
+          "peak_forbidden_normal_force": 96.20637536401703,
+          "first_violation": {
+            "step": 1974,
+            "time": 3.948,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 6.61900167969817,
+            "position": [
+              -0.025252684368082277,
+              0.010638176502527762,
+              0.1280419766167345
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "f8c518621e6ba5961bafb26017573f06369eec39cf2d9c51e0f2272762de8719",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12476318789815811,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.957999999999896,
+          "final_payload_position": [
+            0.1992161339723622,
+            0.06979525572263888,
+            0.03299041224240859
+          ],
+          "final_payload_quaternion": [
+            0.9999993963789422,
+            1.2638819338592794e-17,
+            3.088508259289505e-19,
+            0.0010987455345168506
+          ],
+          "final_payload_corners": [
+            [
+              0.17525574673533267,
+              0.0517425594295199,
+              0.007990412242408589
+            ],
+            [
+              0.17525574673533267,
+              0.0517425594295199,
+              0.05799041224240859
+            ],
+            [
+              0.17517663710459971,
+              0.08774247250811393,
+              0.007990412242408589
+            ],
+            [
+              0.17517663710459971,
+              0.08774247250811393,
+              0.05799041224240859
+            ],
+            [
+              0.2232556308401247,
+              0.05184803893716383,
+              0.007990412242408589
+            ],
+            [
+              0.2232556308401247,
+              0.05184803893716383,
+              0.05799041224240859
+            ],
+            [
+              0.22317652120939174,
+              0.08784795201575786,
+              0.007990412242408589
+            ],
+            [
+              0.22317652120939174,
+              0.08784795201575786,
+              0.05799041224240859
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.4282033950639681e-15,
+          "final_angular_speed": 1.2850316660007491e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 2,
+      "seed": 294379320,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "440dcd4c6c86b945a4863200887084a28a3ef06f52ca93539574c10553d74823",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "c65bf3a074fa9f6851b2b9af46154b730d37869c10124bb38d4448dc9c9c98d0",
+        "intervention_initial_state_sha": "da5cb894267bf10ce4c3f0858bcc70ff82721f359e5a697b6c4f6cb4e4071870",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "47cce272922698ab1c53a435f3bd907ea06e625858dd195121c041680a5c58b9",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13735218516625342,
+          "protected_max_displacement": 0.13191599465245193,
+          "protected_max_angle": 2.2793258464099924,
+          "stable_duration": 2.865999999999906,
+          "final_payload_position": [
+            0.20025735153497615,
+            0.07000776827886858,
+            0.0329904122424086
+          ],
+          "final_payload_quaternion": [
+            0.9999999972447242,
+            1.3792633916352822e-17,
+            -1.0955343012521077e-19,
+            -7.423308092982353e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17625467940857645,
+              0.0520113316651232,
+              0.007990412242408595
+            ],
+            [
+              0.17625467940857645,
+              0.0520113316651232,
+              0.0579904122424086
+            ],
+            [
+              0.17626002419038866,
+              0.08801133126836358,
+              0.007990412242408595
+            ],
+            [
+              0.17626002419038866,
+              0.08801133126836358,
+              0.0579904122424086
+            ],
+            [
+              0.22425467887956363,
+              0.05200420528937358,
+              0.007990412242408595
+            ],
+            [
+              0.22425467887956363,
+              0.05200420528937358,
+              0.0579904122424086
+            ],
+            [
+              0.22426002366137585,
+              0.08800420489261396,
+              0.007990412242408595
+            ],
+            [
+              0.22426002366137585,
+              0.08800420489261396,
+              0.0579904122424086
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.6015523972509106e-15,
+          "final_angular_speed": 9.976820282924276e-16,
+          "forbidden_contact_steps": 131,
+          "forbidden_contact_points": 150,
+          "forbidden_normal_impulse": 1.2389860383434725,
+          "peak_forbidden_normal_force": 98.43827970526495,
+          "first_violation": {
+            "step": 2005,
+            "time": 4.01,
+            "geom1": "protected_geom",
+            "geom2": "right_pad",
+            "normal_force": 0.533438603821631,
+            "position": [
+              -0.024513870601383977,
+              -0.03988758650843362,
+              0.16999520612120433
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "62bd82ffcf65a813361e592495cff967000a003bd1fde0165af95a6eca96d268",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12441974704451952,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.865999999999906,
+          "final_payload_position": [
+            0.19965065205139804,
+            0.06999209435889152,
+            0.03299041224240863
+          ],
+          "final_payload_quaternion": [
+            0.999999995392399,
+            1.2184566124659358e-17,
+            -5.150450690179746e-20,
+            9.599584357570674e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17565410834408055,
+              0.05198748689016839,
+              0.00799041224240863
+            ],
+            [
+              0.17565410834408055,
+              0.05198748689016839,
+              0.05799041224240863
+            ],
+            [
+              0.17564719664337494,
+              0.08798748622667385,
+              0.00799041224240863
+            ],
+            [
+              0.17564719664337494,
+              0.08798748622667385,
+              0.05799041224240863
+            ],
+            [
+              0.22365410745942113,
+              0.051996702491109194,
+              0.00799041224240863
+            ],
+            [
+              0.22365410745942113,
+              0.051996702491109194,
+              0.05799041224240863
+            ],
+            [
+              0.22364719575871553,
+              0.08799670182761465,
+              0.00799041224240863
+            ],
+            [
+              0.22364719575871553,
+              0.08799670182761465,
+              0.05799041224240863
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.4310289318684138e-15,
+          "final_angular_speed": 8.84501561922302e-16,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 3,
+      "seed": 3863138269,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "34597ae8852f8721d250104074135d5ac6043e1d8455b75eea3df20311f932c1",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "3c3186303bac2e53a8f7cd55958dcb358a6f4c3ddb790875b3caf629cb81c701",
+        "intervention_initial_state_sha": "c0d34dec9a414fe9c905fa7e5f15d41d81b87b2e5966620f311cb2a3d032d14d",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "c2ecedcab564ed77134c90c2f85fb1c8724efb6a7f9d4cfacfc632e71dffa523",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.1376464553269774,
+          "protected_max_displacement": 0.11635812905399655,
+          "protected_max_angle": 2.1401074064740113,
+          "stable_duration": 2.7899999999999143,
+          "final_payload_position": [
+            0.1979251940076109,
+            0.07110226059737201,
+            0.03299041224240869
+          ],
+          "final_payload_quaternion": [
+            0.9999997938358824,
+            1.3584653713539361e-17,
+            -6.457199866806817e-20,
+            0.0006421278636824143
+          ],
+          "final_payload_corners": [
+            [
+              0.17394833039769095,
+              0.053071453310084636,
+              0.007990412242408686
+            ],
+            [
+              0.17394833039769095,
+              0.053071453310084636,
+              0.05799041224240869
+            ],
+            [
+              0.17390209720103744,
+              0.08907142362245471,
+              0.007990412242408686
+            ],
+            [
+              0.17390209720103744,
+              0.08907142362245471,
+              0.05799041224240869
+            ],
+            [
+              0.22194829081418438,
+              0.05313309757228931,
+              0.007990412242408686
+            ],
+            [
+              0.22194829081418438,
+              0.05313309757228931,
+              0.05799041224240869
+            ],
+            [
+              0.22190205761753087,
+              0.08913306788465938,
+              0.007990412242408686
+            ],
+            [
+              0.22190205761753087,
+              0.08913306788465938,
+              0.05799041224240869
+            ]
+          ],
+          "final_gripper_opening": 0.09500000000000001,
+          "final_linear_speed": 1.5085432802305636e-15,
+          "final_angular_speed": 1.1747376950750156e-15,
+          "forbidden_contact_steps": 1268,
+          "forbidden_contact_points": 2180,
+          "forbidden_normal_impulse": 9.729489468428294,
+          "peak_forbidden_normal_force": 93.19966550380342,
+          "first_violation": {
+            "step": 2018,
+            "time": 4.036,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 7.352250851153822,
+            "position": [
+              -0.02494494634802902,
+              0.02598849707302836,
+              0.1279014354615448
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "2dd34116e91e0b9c626290afa6ef3809ea350c82056c1b597fd44b53e7eabd14",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.1246634580334052,
+          "protected_max_displacement": 4.793878795643358e-06,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.8159999999999115,
+          "final_payload_position": [
+            0.19990768096606457,
+            0.06999097202156636,
+            0.03299041224240862
+          ],
+          "final_payload_quaternion": [
+            0.9999999956755826,
+            1.1636745123849497e-17,
+            -1.8202759454794146e-19,
+            9.299910869313477e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17591102934910707,
+              0.05198650837572642,
+              0.007990412242408616
+            ],
+            [
+              0.17591102934910707,
+              0.05198650837572642,
+              0.05799041224240862
+            ],
+            [
+              0.17590433341331013,
+              0.08798650775301035,
+              0.007990412242408616
+            ],
+            [
+              0.17590433341331013,
+              0.08798650775301035,
+              0.05799041224240862
+            ],
+            [
+              0.223911028518819,
+              0.05199543629012236,
+              0.007990412242408616
+            ],
+            [
+              0.223911028518819,
+              0.05199543629012236,
+              0.05799041224240862
+            ],
+            [
+              0.22390433258302206,
+              0.0879954356674063,
+              0.007990412242408616
+            ],
+            [
+              0.22390433258302206,
+              0.0879954356674063,
+              0.05799041224240862
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.4321354805666974e-15,
+          "final_angular_speed": 1.108395583548327e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 4,
+      "seed": 2976320823,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "74ae64db5d0aea6b495aab2666f6dc7bcadd897fef170029348a5268f4b88d27",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "c766acdfbd978497b19dbc0ea8711d341bd1f90b65d0ed943ea41118b908f993",
+        "intervention_initial_state_sha": "24917bc2c5816d529fd0252b2ac33dd01b6cfda3c49cd62eddb5cb82ec51cf65",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "49c4901d8d651545691b561b0b314b03e337182ef35ecb74f011269a371eb136",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13782746009634314,
+          "protected_max_displacement": 0.11722856332575744,
+          "protected_max_angle": 2.139571103728686,
+          "stable_duration": 2.7979999999999134,
+          "final_payload_position": [
+            0.19857316087179303,
+            0.0709432982497356,
+            0.032990412242408625
+          ],
+          "final_payload_quaternion": [
+            0.999999752560312,
+            1.1689799982781475e-17,
+            -3.653881587832716e-19,
+            0.0007034765912103406
+          ],
+          "final_payload_corners": [
+            [
+              0.17459850977701724,
+              0.05290954919736808,
+              0.007990412242408623
+            ],
+            [
+              0.17459850977701724,
+              0.05290954919736808,
+              0.057990412242408626
+            ],
+            [
+              0.174547859474983,
+              0.08890951356605745,
+              0.007990412242408623
+            ],
+            [
+              0.174547859474983,
+              0.08890951356605745,
+              0.057990412242408626
+            ],
+            [
+              0.22259846226860305,
+              0.052977082933413744,
+              0.007990412242408623
+            ],
+            [
+              0.22259846226860305,
+              0.052977082933413744,
+              0.057990412242408626
+            ],
+            [
+              0.2225478119665688,
+              0.08897704730210311,
+              0.007990412242408623
+            ],
+            [
+              0.2225478119665688,
+              0.08897704730210311,
+              0.057990412242408626
+            ]
+          ],
+          "final_gripper_opening": 0.095,
+          "final_linear_speed": 1.377759111670571e-15,
+          "final_angular_speed": 1.0997059863028036e-15,
+          "forbidden_contact_steps": 1301,
+          "forbidden_contact_points": 2029,
+          "forbidden_normal_impulse": 10.099169439843308,
+          "peak_forbidden_normal_force": 103.78077765307692,
+          "first_violation": {
+            "step": 2016,
+            "time": 4.032,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 7.614180135027652,
+            "position": [
+              -0.02486497763710853,
+              0.02642300515344825,
+              0.12811557710533888
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "64abacd105dcf2849dbbfd33b373979b36749b8141060b24e96a29700cbd2829",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12442737887860814,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.82799999999991,
+          "final_payload_position": [
+            0.19976536242029763,
+            0.07008362349533621,
+            0.032990412242408645
+          ],
+          "final_payload_quaternion": [
+            0.9999960185629777,
+            1.3033276827529908e-17,
+            -2.772777348236013e-19,
+            0.0028218536803226563
+          ],
+          "final_payload_corners": [
+            [
+              0.17586733096552135,
+              0.05194846172085725,
+              0.007990412242408644
+            ],
+            [
+              0.17586733096552135,
+              0.05194846172085725,
+              0.05799041224240865
+            ],
+            [
+              0.17566415830946047,
+              0.08794788839506734,
+              0.007990412242408644
+            ],
+            [
+              0.17566415830946047,
+              0.08794788839506734,
+              0.05799041224240865
+            ],
+            [
+              0.2238665665311348,
+              0.052219358595605087,
+              0.007990412242408644
+            ],
+            [
+              0.2238665665311348,
+              0.052219358595605087,
+              0.05799041224240865
+            ],
+            [
+              0.22366339387507392,
+              0.08821878526981518,
+              0.007990412242408644
+            ],
+            [
+              0.22366339387507392,
+              0.08821878526981518,
+              0.05799041224240865
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 4.1783575075830307e-16,
+          "final_angular_speed": 7.721130685060069e-16,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 5,
+      "seed": 3124722216,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "c165852b26daeba3a00b0f15c55e631d07613e24ab125525b02f9e49c639851c",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "3032409e9bfc97382588e62bfd460a96dbecc0a6ef3db935f939b6dd0fdaba11",
+        "intervention_initial_state_sha": "2e7e49ce5f0bc6a01538d333f97139610b3bb04a38bb252bd30fc3090ac1027d",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "957b6540e96adc85ab44cf9d51a13c7cdc827a39df4092f977b6f93334c52158",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13800395936722498,
+          "protected_max_displacement": 0.11662371072490331,
+          "protected_max_angle": 2.1404515140679825,
+          "stable_duration": 2.7859999999999148,
+          "final_payload_position": [
+            0.19839289449321323,
+            0.07111769761293021,
+            0.03299041224240863
+          ],
+          "final_payload_quaternion": [
+            0.9999992531569939,
+            1.0349280657721822e-17,
+            2.6452126864183787e-19,
+            0.00122216425021821
+          ],
+          "final_payload_corners": [
+            [
+              0.17443696407026338,
+              0.05305908754540881,
+              0.00799041224240863
+            ],
+            [
+              0.17443696407026338,
+              0.05305908754540881,
+              0.05799041224240863
+            ],
+            [
+              0.1743489683099667,
+              0.08905898000005609,
+              0.00799041224240863
+            ],
+            [
+              0.1743489683099667,
+              0.08905898000005609,
+              0.05799041224240863
+            ],
+            [
+              0.22243682067645976,
+              0.05317641522580434,
+              0.00799041224240863
+            ],
+            [
+              0.22243682067645976,
+              0.05317641522580434,
+              0.05799041224240863
+            ],
+            [
+              0.2223488249161631,
+              0.08917630768045162,
+              0.00799041224240863
+            ],
+            [
+              0.2223488249161631,
+              0.08917630768045162,
+              0.05799041224240863
+            ]
+          ],
+          "final_gripper_opening": 0.09500000000000001,
+          "final_linear_speed": 1.4379098660093972e-15,
+          "final_angular_speed": 1.0521254003654124e-15,
+          "forbidden_contact_steps": 1269,
+          "forbidden_contact_points": 2254,
+          "forbidden_normal_impulse": 9.956540183564224,
+          "peak_forbidden_normal_force": 100.77309348436806,
+          "first_violation": {
+            "step": 2019,
+            "time": 4.038,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 7.511758605124053,
+            "position": [
+              -0.02487408225224169,
+              0.026893135463789547,
+              0.12826099666261742
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "71ab091e5808240c97869b27b2e86ef87ce9d8f33d07ee8f40e6e2d9954f6d6b",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.1242607426289584,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.8159999999999115,
+          "final_payload_position": [
+            0.19946891240601536,
+            0.06998829380560947,
+            0.03299041224240868
+          ],
+          "final_payload_quaternion": [
+            0.9999999943402093,
+            1.089212009576503e-17,
+            -6.593805090479677e-19,
+            0.0001063935270729208
+          ],
+          "final_payload_corners": [
+            [
+              0.17547274311630828,
+              0.051983187323843855,
+              0.007990412242408679
+            ],
+            [
+              0.17547274311630828,
+              0.051983187323843855,
+              0.05799041224240868
+            ],
+            [
+              0.17546508278240236,
+              0.08798318650883391,
+              0.007990412242408679
+            ],
+            [
+              0.17546508278240236,
+              0.08798318650883391,
+              0.05799041224240868
+            ],
+            [
+              0.22347274202962836,
+              0.051993401102385046,
+              0.007990412242408679
+            ],
+            [
+              0.22347274202962836,
+              0.051993401102385046,
+              0.05799041224240868
+            ],
+            [
+              0.22346508169572243,
+              0.0879934002873751,
+              0.007990412242408679
+            ],
+            [
+              0.22346508169572243,
+              0.0879934002873751,
+              0.05799041224240868
+            ]
+          ],
+          "final_gripper_opening": 0.095,
+          "final_linear_speed": 1.5602159660973794e-15,
+          "final_angular_speed": 1.1559151086389763e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 6,
+      "seed": 4115089928,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "891b79e0b709b2b145b51e2c61a4eab7a7391862094232ef40971edca031ac26",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "1b0bd6213a4712810b1878ebfad22f7a60c883e2ab7fb61f0629445ddc9e93aa",
+        "intervention_initial_state_sha": "9f619b40f4a93dcad85bb3d226d84ebc9c72721936148139f757687418d23f4d",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "955872d9403c6197d9de4a7d919d3025c9595c5bc2fb989b52618536472f796b",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13797190689339317,
+          "protected_max_displacement": 0.13167208877203185,
+          "protected_max_angle": 2.267957914411735,
+          "stable_duration": 2.8259999999999104,
+          "final_payload_position": [
+            0.19992535711364237,
+            0.0699945947393208,
+            0.032990412242408604
+          ],
+          "final_payload_quaternion": [
+            0.999999996211805,
+            1.4268345831813683e-17,
+            7.399879700659484e-19,
+            8.704245439877205e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17592849100565552,
+              0.05199041697427549,
+              0.007990412242408602
+            ],
+            [
+              0.17592849100565552,
+              0.05199041697427549,
+              0.057990412242408605
+            ],
+            [
+              0.17592222394896256,
+              0.08799041642877549,
+              0.007990412242408602
+            ],
+            [
+              0.17592222394896256,
+              0.08799041642877549,
+              0.057990412242408605
+            ],
+            [
+              0.22392849027832218,
+              0.05199877304986612,
+              0.007990412242408602
+            ],
+            [
+              0.22392849027832218,
+              0.05199877304986612,
+              0.057990412242408605
+            ],
+            [
+              0.22392222322162922,
+              0.08799877250436612,
+              0.007990412242408602
+            ],
+            [
+              0.22392222322162922,
+              0.08799877250436612,
+              0.057990412242408605
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.430586511211037e-15,
+          "final_angular_speed": 8.129065390483227e-16,
+          "forbidden_contact_steps": 187,
+          "forbidden_contact_points": 209,
+          "forbidden_normal_impulse": 1.5197428714659642,
+          "peak_forbidden_normal_force": 93.24687021214602,
+          "first_violation": {
+            "step": 2016,
+            "time": 4.032,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 8.075645159271033,
+            "position": [
+              -0.0249352074646524,
+              0.026422148038506482,
+              0.12816858415478505
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "77830667c7352c54d9613a645b6ea0ea49aeb223d5b1838759f90f430d1f5b5a",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12445971514637885,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.8259999999999104,
+          "final_payload_position": [
+            0.19967242685261538,
+            0.07001481434470265,
+            0.032990412242408625
+          ],
+          "final_payload_quaternion": [
+            0.9999999904251372,
+            1.3020548544047991e-17,
+            3.9642932129994765e-19,
+            -0.0001383825323003471
+          ],
+          "final_payload_corners": [
+            [
+              0.17566744600068707,
+              0.052021457395579576,
+              0.007990412242408623
+            ],
+            [
+              0.17566744600068707,
+              0.052021457395579576,
+              0.057990412242408626
+            ],
+            [
+              0.1756774095429173,
+              0.08802145601679935,
+              0.007990412242408623
+            ],
+            [
+              0.1756774095429173,
+              0.08802145601679935,
+              0.057990412242408626
+            ],
+            [
+              0.22366744416231346,
+              0.05200817267260595,
+              0.007990412242408623
+            ],
+            [
+              0.22366744416231346,
+              0.05200817267260595,
+              0.057990412242408626
+            ],
+            [
+              0.2236774077045437,
+              0.08800817129382572,
+              0.007990412242408623
+            ],
+            [
+              0.2236774077045437,
+              0.08800817129382572,
+              0.057990412242408626
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.4884264740559323e-15,
+          "final_angular_speed": 9.045667751203064e-16,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 7,
+      "seed": 1241137303,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "01264e3f7602cc69d11dea49bf7c73feedaf769ef2fb9c230ba91a4d9d1de697",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "83bb6d203a6468bb46347e60ce0efa89aa9645476b5871941a6328236485d961",
+        "intervention_initial_state_sha": "ffc99d754a2f6822faf15160e68f8fd384b70716676a39bfb62bcfed550723ea",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "2a44fe7d714c1b26bb9919b8403edb94775822a8146cc9287c80d26bb8726d2f",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13752007101323296,
+          "protected_max_displacement": 0.13213453490085314,
+          "protected_max_angle": 2.251668267647236,
+          "stable_duration": 2.9259999999998993,
+          "final_payload_position": [
+            0.20003743696998702,
+            0.06999307369828776,
+            0.03299041224240862
+          ],
+          "final_payload_quaternion": [
+            0.9999999967633949,
+            1.205337540183079e-17,
+            4.75970232439754e-19,
+            8.045626602217601e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17604033370626856,
+              0.05198921203056679,
+              0.007990412242408616
+            ],
+            [
+              0.17604033370626856,
+              0.05198921203056679,
+              0.05799041224240862
+            ],
+            [
+              0.1760345408551337,
+              0.08798921156449561,
+              0.007990412242408616
+            ],
+            [
+              0.1760345408551337,
+              0.08798921156449561,
+              0.05799041224240862
+            ],
+            [
+              0.22404033308484034,
+              0.05199693583207991,
+              0.007990412242408616
+            ],
+            [
+              0.22404033308484034,
+              0.05199693583207991,
+              0.05799041224240862
+            ],
+            [
+              0.22403454023370548,
+              0.08799693536600874,
+              0.007990412242408616
+            ],
+            [
+              0.22403454023370548,
+              0.08799693536600874,
+              0.05799041224240862
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.5271486544764585e-15,
+          "final_angular_speed": 8.695192011137639e-16,
+          "forbidden_contact_steps": 170,
+          "forbidden_contact_points": 189,
+          "forbidden_normal_impulse": 1.4236777985680804,
+          "peak_forbidden_normal_force": 103.85756069432027,
+          "first_violation": {
+            "step": 1984,
+            "time": 3.968,
+            "geom1": "protected_geom",
+            "geom2": "right_pad",
+            "normal_force": 0.5693185359263505,
+            "position": [
+              -0.02515901113201515,
+              -0.04024602625914115,
+              0.16999520612120433
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "dae983bd628087d231e0cf62094700c45020dbf01d45bd6267f9c8d3d52e4363",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12467798625798486,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.9259999999998993,
+          "final_payload_position": [
+            0.19914344670229947,
+            0.0699918621731385,
+            0.032990412242408694
+          ],
+          "final_payload_quaternion": [
+            0.9999999954297984,
+            1.2277959507025342e-17,
+            4.967446100382234e-19,
+            9.560545723006101e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.1751468889374834,
+              0.05198727344026696,
+              0.007990412242408693
+            ],
+            [
+              0.1751468889374834,
+              0.05198727344026696,
+              0.057990412242408695
+            ],
+            [
+              0.17514000534459429,
+              0.08798727278215791,
+              0.007990412242408693
+            ],
+            [
+              0.17514000534459429,
+              0.08798727278215791,
+              0.057990412242408695
+            ],
+            [
+              0.22314688806000466,
+              0.0519964515641191,
+              0.007990412242408693
+            ],
+            [
+              0.22314688806000466,
+              0.0519964515641191,
+              0.057990412242408695
+            ],
+            [
+              0.22314000446711554,
+              0.08799645090601005,
+              0.007990412242408693
+            ],
+            [
+              0.22314000446711554,
+              0.08799645090601005,
+              0.057990412242408695
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.5200843888431172e-15,
+          "final_angular_speed": 8.556530541085193e-16,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 8,
+      "seed": 4143420456,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "2e2963f4ab9c3ca915527354c27527cbf2f575389d2e11a663e2d567fdf4d207",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "d574170d25352f2d6431b3d2a7d2e27f1669b57b0c050745569968edb142bd4c",
+        "intervention_initial_state_sha": "70975f4bad5ff45f447802841ede10f83f344e647e08374a351ad2357e048b1d",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "280b87ac52725c0e0b1d7e6fff1a2bf1c345f6240b32dd723e1a108b5755abf0",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.137344993350129,
+          "protected_max_displacement": 0.13164591517322125,
+          "protected_max_angle": 2.259911535257087,
+          "stable_duration": 2.947999999999897,
+          "final_payload_position": [
+            0.19953004290885287,
+            0.07009003296982522,
+            0.03299041224240861
+          ],
+          "final_payload_quaternion": [
+            0.9999996584058126,
+            1.0751925451825497e-17,
+            1.8395936264088973e-19,
+            -0.0008265520293790512
+          ],
+          "final_payload_corners": [
+            [
+              0.175500319838996,
+              0.052129732048460095,
+              0.00799041224240861
+            ],
+            [
+              0.175500319838996,
+              0.052129732048460095,
+              0.05799041224240861
+            ],
+            [
+              0.17555983156478244,
+              0.08812968285890557,
+              0.00799041224240861
+            ],
+            [
+              0.17555983156478244,
+              0.08812968285890557,
+              0.05799041224240861
+            ],
+            [
+              0.2235002542529233,
+              0.05205038308074486,
+              0.00799041224240861
+            ],
+            [
+              0.2235002542529233,
+              0.05205038308074486,
+              0.05799041224240861
+            ],
+            [
+              0.22355976597870975,
+              0.08805033389119034,
+              0.00799041224240861
+            ],
+            [
+              0.22355976597870975,
+              0.08805033389119034,
+              0.05799041224240861
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.4909401945557107e-15,
+          "final_angular_speed": 1.0858811839436178e-15,
+          "forbidden_contact_steps": 162,
+          "forbidden_contact_points": 185,
+          "forbidden_normal_impulse": 1.3890780472180735,
+          "peak_forbidden_normal_force": 96.08372347883737,
+          "first_violation": {
+            "step": 1978,
+            "time": 3.956,
+            "geom1": "protected_geom",
+            "geom2": "right_pad",
+            "normal_force": 0.5985280326466313,
+            "position": [
+              -0.025083873482430453,
+              -0.04049908050697703,
+              0.1699952061212044
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "d2cd22127fb7068de2d828cc4b4f9897021532e003c40ca61cd52d29772f9d86",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12480203490633324,
+          "protected_max_displacement": 4.793878795643358e-06,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.945999999999897,
+          "final_payload_position": [
+            0.19897265520772173,
+            0.07001316518325161,
+            0.032990412242408625
+          ],
+          "final_payload_quaternion": [
+            0.9999999939820935,
+            9.985294149242543e-18,
+            -3.8658882266651613e-19,
+            -0.00010970785190406263
+          ],
+          "final_payload_corners": [
+            [
+              0.17496870630279596,
+              0.052018431593400576,
+              0.007990412242408623
+            ],
+            [
+              0.17496870630279596,
+              0.052018431593400576,
+              0.057990412242408626
+            ],
+            [
+              0.1749766052680855,
+              0.08801843072682206,
+              0.007990412242408623
+            ],
+            [
+              0.1749766052680855,
+              0.08801843072682206,
+              0.057990412242408626
+            ],
+            [
+              0.22296870514735795,
+              0.052007899639681165,
+              0.007990412242408623
+            ],
+            [
+              0.22296870514735795,
+              0.052007899639681165,
+              0.057990412242408626
+            ],
+            [
+              0.2229766041126475,
+              0.08800789877310264,
+              0.007990412242408623
+            ],
+            [
+              0.2229766041126475,
+              0.08800789877310264,
+              0.057990412242408626
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.4865752167400959e-15,
+          "final_angular_speed": 1.0966552723562847e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 9,
+      "seed": 3508305010,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "0de965a7d10506174197a93540b5a8ac355ff468c8f337e76328c93c1121551e",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "33b30009f5e98e15eb56fe9c6585594150a8154dc2e3c5cb6dec61ba546a7dd2",
+        "intervention_initial_state_sha": "3d34d7081527fe560f70caa1bd8740a6a99cdd70447c272c46290cff234ce04f",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "c8ac1f6b6e2d7e29222d6524ebab1097f24b929cd4a3005389a81f27765d8879",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13761518055265415,
+          "protected_max_displacement": 0.13095572360832752,
+          "protected_max_angle": 2.273212697935717,
+          "stable_duration": 2.821999999999911,
+          "final_payload_position": [
+            0.1998580685486437,
+            0.06997012079603715,
+            0.032990412242408694
+          ],
+          "final_payload_quaternion": [
+            0.9999991135771172,
+            1.17154430825316e-17,
+            -7.400498822403729e-19,
+            0.0013314822492851899
+          ],
+          "final_payload_corners": [
+            [
+              0.1759060869636878,
+              0.051906273527143054,
+              0.007990412242408693
+            ],
+            [
+              0.1759060869636878,
+              0.051906273527143054,
+              0.057990412242408695
+            ],
+            [
+              0.17581022032671773,
+              0.08790614588230447,
+              0.007990412242408693
+            ],
+            [
+              0.17581022032671773,
+              0.08790614588230447,
+              0.057990412242408695
+            ],
+            [
+              0.2239059167705697,
+              0.05203409570976982,
+              0.007990412242408693
+            ],
+            [
+              0.2239059167705697,
+              0.05203409570976982,
+              0.057990412242408695
+            ],
+            [
+              0.22381005013359961,
+              0.08803396806493125,
+              0.007990412242408693
+            ],
+            [
+              0.22381005013359961,
+              0.08803396806493125,
+              0.057990412242408695
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.5261464971945625e-15,
+          "final_angular_speed": 8.064984052479685e-16,
+          "forbidden_contact_steps": 126,
+          "forbidden_contact_points": 146,
+          "forbidden_normal_impulse": 1.1930412819591856,
+          "peak_forbidden_normal_force": 99.02680667126114,
+          "first_violation": {
+            "step": 2016,
+            "time": 4.032,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 12.38005757751108,
+            "position": [
+              -0.025507201726411455,
+              0.025737207521311423,
+              0.1278892014520189
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "4d7ac6d83d83dc01ba28c229e751529db3d5667b3edc58e52fcf94b331f41428",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12452762018286988,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 2.9802322387695312e-08,
+          "stable_duration": 2.821999999999911,
+          "final_payload_position": [
+            0.19944025850040914,
+            0.06999227515146121,
+            0.032990412242408625
+          ],
+          "final_payload_quaternion": [
+            0.9999999958857066,
+            1.1944576513514691e-17,
+            2.803279202530613e-19,
+            9.071155725931366e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.1754435245114292,
+              0.0519879212929598,
+              0.007990412242408623
+            ],
+            [
+              0.1754435245114292,
+              0.0519879212929598,
+              0.057990412242408626
+            ],
+            [
+              0.1754369932793334,
+              0.08798792070050156,
+              0.007990412242408623
+            ],
+            [
+              0.1754369932793334,
+              0.08798792070050156,
+              0.057990412242408626
+            ],
+            [
+              0.22344352372148488,
+              0.051996629602420866,
+              0.007990412242408623
+            ],
+            [
+              0.22344352372148488,
+              0.051996629602420866,
+              0.057990412242408626
+            ],
+            [
+              0.22343699248938909,
+              0.08799662900996262,
+              0.007990412242408623
+            ],
+            [
+              0.22343699248938909,
+              0.08799662900996262,
+              0.057990412242408626
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.594683392656381e-15,
+          "final_angular_speed": 1.1310961688790563e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 10,
+      "seed": 762409811,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "6987299db26b6a867a93ca8f3ed8e714af176dde0dbf73b1f7c8942f58b72a12",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "fd09fa8410c29cd363b20b5941fcd3547e6ca25086ae5ac834bab9807e15e6ed",
+        "intervention_initial_state_sha": "e2d287c8863e31d59e4204ea385b47eec8b003ce19839ebec76a705982bec970",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "64a7d95c1d58ea5b95bd9af989cf4fff75c3a86871fbdf4cf481aef6c32cf5ca",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13770262273257927,
+          "protected_max_displacement": 0.12976176743423995,
+          "protected_max_angle": 2.269641233097211,
+          "stable_duration": 2.9219999999999,
+          "final_payload_position": [
+            0.19973362243247345,
+            0.06999236127920183,
+            0.03299041224240861
+          ],
+          "final_payload_quaternion": [
+            0.9999999964642822,
+            1.3025933612090763e-17,
+            -3.256481850605551e-19,
+            8.409182329543063e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17573665007753025,
+              0.05198832512626958,
+              0.00799041224240861
+            ],
+            [
+              0.17573665007753025,
+              0.05198832512626958,
+              0.05799041224240861
+            ],
+            [
+              0.1757305954662744,
+              0.08798832461712627,
+              0.00799041224240861
+            ],
+            [
+              0.1757305954662744,
+              0.08798832461712627,
+              0.05799041224240861
+            ],
+            [
+              0.2237366493986725,
+              0.05199639794127739,
+              0.00799041224240861
+            ],
+            [
+              0.2237366493986725,
+              0.05199639794127739,
+              0.05799041224240861
+            ],
+            [
+              0.22373059478741664,
+              0.08799639743213408,
+              0.00799041224240861
+            ],
+            [
+              0.22373059478741664,
+              0.08799639743213408,
+              0.05799041224240861
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.3761096428433981e-15,
+          "final_angular_speed": 8.833996132079817e-16,
+          "forbidden_contact_steps": 91,
+          "forbidden_contact_points": 106,
+          "forbidden_normal_impulse": 1.097850787475308,
+          "peak_forbidden_normal_force": 104.73703815191398,
+          "first_violation": {
+            "step": 1987,
+            "time": 3.974,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 6.20627634436521,
+            "position": [
+              -0.02422482472972134,
+              0.011175523154296731,
+              0.12810492497004713
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "946c7c96890a1c29bad76a0bae05730a5bebf0a60091c22c8acdc7ab2c7c2518",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12482944665230265,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.9199999999999,
+          "final_payload_position": [
+            0.19912978588487368,
+            0.06999228591733521,
+            0.032990412242408625
+          ],
+          "final_payload_quaternion": [
+            0.9999999954098778,
+            1.3444396163831249e-17,
+            -4.324920035842989e-19,
+            9.581359013281285e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17513323561475436,
+              0.05198768719551873,
+              0.007990412242408623
+            ],
+            [
+              0.17513323561475436,
+              0.05198768719551873,
+              0.057990412242408626
+            ],
+            [
+              0.17512633703629643,
+              0.08798768653454116,
+              0.007990412242408623
+            ],
+            [
+              0.17512633703629643,
+              0.08798768653454116,
+              0.057990412242408626
+            ],
+            [
+              0.22313323473345092,
+              0.05199688530012926,
+              0.007990412242408623
+            ],
+            [
+              0.22313323473345092,
+              0.05199688530012926,
+              0.057990412242408626
+            ],
+            [
+              0.223126336154993,
+              0.08799688463915169,
+              0.007990412242408623
+            ],
+            [
+              0.223126336154993,
+              0.08799688463915169,
+              0.057990412242408626
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.3713910253766231e-15,
+          "final_angular_speed": 1.250651927114239e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 11,
+      "seed": 3206462622,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "32f12163783ea1d1233c500447d1b00f2d34c340975e27a5214a020d0e9ecb89",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "e0859630afb2052accf9ace0cb74aab7b71fb806d098607a4a86a58d679e6ccf",
+        "intervention_initial_state_sha": "748a8e9f99218247ac72d8bdffaaf6f7d029fd82484d831108b56d0586a4157c",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "9960bf22d5f410f8df19fe64f6096b51941f879fca427bdb4a525975d75bc478",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.1377360913923914,
+          "protected_max_displacement": 0.1151516353558392,
+          "protected_max_angle": 2.1295273315449186,
+          "stable_duration": 2.8339999999999095,
+          "final_payload_position": [
+            0.19772115887679578,
+            0.07085304055088294,
+            0.03299041224240869
+          ],
+          "final_payload_quaternion": [
+            0.9999979325933919,
+            1.1793058392562063e-17,
+            1.6786024897567944e-20,
+            -0.0020334229621664086
+          ],
+          "final_payload_corners": [
+            [
+              0.17364815427232788,
+              0.0529507935044011,
+              0.007990412242408686
+            ],
+            [
+              0.17364815427232788,
+              0.0529507935044011,
+              0.05799041224240869
+            ],
+            [
+              0.1737945604229222,
+              0.0889504957981572,
+              0.007990412242408686
+            ],
+            [
+              0.1737945604229222,
+              0.0889504957981572,
+              0.05799041224240869
+            ],
+            [
+              0.22164775733066935,
+              0.05275558530360869,
+              0.007990412242408686
+            ],
+            [
+              0.22164775733066935,
+              0.05275558530360869,
+              0.05799041224240869
+            ],
+            [
+              0.22179416348126368,
+              0.08875528759736478,
+              0.007990412242408686
+            ],
+            [
+              0.22179416348126368,
+              0.08875528759736478,
+              0.05799041224240869
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.5975613501342724e-15,
+          "final_angular_speed": 1.1209002640852386e-15,
+          "forbidden_contact_steps": 1272,
+          "forbidden_contact_points": 2284,
+          "forbidden_normal_impulse": 10.02799272111694,
+          "peak_forbidden_normal_force": 105.5613667669267,
+          "first_violation": {
+            "step": 2006,
+            "time": 4.012,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 7.850040325896302,
+            "position": [
+              -0.02425114234420697,
+              0.026655159773906315,
+              0.12804932132008426
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "0d447181e60f7fb3c8306b50978158e46336c26909057ed233eb5efa436e6d4f",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12444431103251619,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.8619999999999064,
+          "final_payload_position": [
+            0.1994526732030973,
+            0.06989410068745958,
+            0.0329904122424086
+          ],
+          "final_payload_quaternion": [
+            0.9999996068620589,
+            1.0996119822064154e-17,
+            9.377777148136333e-20,
+            -0.000886721899067227
+          ],
+          "final_payload_corners": [
+            [
+              0.1754207889685155,
+              0.05193669162780796,
+              0.007990412242408595
+            ],
+            [
+              0.1754207889685155,
+              0.05193669162780796,
+              0.0579904122424086
+            ],
+            [
+              0.17548463292014885,
+              0.08793663501595567,
+              0.007990412242408595
+            ],
+            [
+              0.17548463292014885,
+              0.08793663501595567,
+              0.0579904122424086
+            ],
+            [
+              0.22342071348604578,
+              0.051851566358963486,
+              0.007990412242408595
+            ],
+            [
+              0.22342071348604578,
+              0.051851566358963486,
+              0.0579904122424086
+            ],
+            [
+              0.22348455743767912,
+              0.0878515097471112,
+              0.007990412242408595
+            ],
+            [
+              0.22348455743767912,
+              0.0878515097471112,
+              0.0579904122424086
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.4871434774828057e-15,
+          "final_angular_speed": 1.0898791962056079e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 12,
+      "seed": 3797521870,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "7780e1ffce9f36a0cd5191af76388aa1a562c0cba5b9545dbe6a375467830323",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "6afce424f7d809e0b2d5fe5c705dcfd93670009786869ac22bc750aabff95b4b",
+        "intervention_initial_state_sha": "d869cb9b927f100ee62e39145fa03cdfca8934b89bf395a2686ccba3b22ab072",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "a49d9397ed0fa4a1ddeae5a21812adbbff71a114accf240518cfd3ab7408ed90",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.1375022931550513,
+          "protected_max_displacement": 0.1309589513061924,
+          "protected_max_angle": 2.2822666319943155,
+          "stable_duration": 2.9359999999998982,
+          "final_payload_position": [
+            0.20010975384706936,
+            0.07000740715289967,
+            0.032990412242408625
+          ],
+          "final_payload_quaternion": [
+            0.9999999959966656,
+            1.1857368400934364e-17,
+            3.745375252088687e-20,
+            -8.947998942907098e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17610653295178288,
+              0.05201170248061514,
+              0.007990412242408623
+            ],
+            [
+              0.17610653295178288,
+              0.05201170248061514,
+              0.057990412242408626
+            ],
+            [
+              0.176112975510996,
+              0.08801170190413501,
+              0.007990412242408623
+            ],
+            [
+              0.176112975510996,
+              0.08801170190413501,
+              0.057990412242408626
+            ],
+            [
+              0.22410653218314272,
+              0.05200311240166434,
+              0.007990412242408623
+            ],
+            [
+              0.22410653218314272,
+              0.05200311240166434,
+              0.057990412242408626
+            ],
+            [
+              0.22411297474235584,
+              0.08800311182518421,
+              0.007990412242408623
+            ],
+            [
+              0.22411297474235584,
+              0.08800311182518421,
+              0.057990412242408626
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.3745394822387233e-15,
+          "final_angular_speed": 1.017085707597269e-15,
+          "forbidden_contact_steps": 103,
+          "forbidden_contact_points": 123,
+          "forbidden_normal_impulse": 1.1357491447342982,
+          "peak_forbidden_normal_force": 93.75638996936418,
+          "first_violation": {
+            "step": 1983,
+            "time": 3.966,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 6.5141440875984244,
+            "position": [
+              -0.02448500675294298,
+              0.010829147803940117,
+              0.12783506372363748
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "2c65d7675bd692d7f7de2b59f4520c02db455c2393b8fb08b8a9150a44b5ba21",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12476525127487384,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 2.9802322387695312e-08,
+          "stable_duration": 2.9359999999998982,
+          "final_payload_position": [
+            0.19923210208043154,
+            0.07010481947643087,
+            0.03299041224240864
+          ],
+          "final_payload_quaternion": [
+            0.9999996248122288,
+            1.0858793430772838e-17,
+            -4.910882030085411e-19,
+            0.0008662421151777439
+          ],
+          "final_payload_corners": [
+            [
+              0.1752633228028971,
+              0.052063266884016975,
+              0.007990412242408637
+            ],
+            [
+              0.1752633228028971,
+              0.052063266884016975,
+              0.05799041224240864
+            ],
+            [
+              0.17520095339400457,
+              0.08806321285698802,
+              0.007990412242408637
+            ],
+            [
+              0.17520095339400457,
+              0.08806321285698802,
+              0.05799041224240864
+            ],
+            [
+              0.22326325076685852,
+              0.05214642609587371,
+              0.007990412242408637
+            ],
+            [
+              0.22326325076685852,
+              0.05214642609587371,
+              0.05799041224240864
+            ],
+            [
+              0.22320088135796598,
+              0.08814637206884476,
+              0.007990412242408637
+            ],
+            [
+              0.22320088135796598,
+              0.08814637206884476,
+              0.05799041224240864
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 6.898248997108135e-16,
+          "final_angular_speed": 1.1513633832398285e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 13,
+      "seed": 2615983255,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "d00ec9821959fc9b1f7b38cc418e2ed532dcf8a9ae925c5da0723883c255acdc",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "05a0b74bd9269ac6f0da0e5bffc8a3a635880a1eb7cd93be8a43426d20244451",
+        "intervention_initial_state_sha": "2e153a84b1cc600feb99a296c9e9e4bdd9d2eae505e01f9eb36aac56f83392d8",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "82fd32205eafd6187d22f39d4e1b88e523fe19532b6ce87f8fc47805b478e2c4",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.1380034652305453,
+          "protected_max_displacement": 0.11659383856821262,
+          "protected_max_angle": 2.1365645581569446,
+          "stable_duration": 2.873999999999905,
+          "final_payload_position": [
+            0.19707953853555057,
+            0.07079585310034024,
+            0.032990412242408604
+          ],
+          "final_payload_quaternion": [
+            0.9999998462071013,
+            1.419591687999783e-17,
+            3.177664273211926e-19,
+            -0.0005546041585756187
+          ],
+          "final_payload_corners": [
+            [
+              0.17305958755302953,
+              0.05282248516894557,
+              0.007990412242408602
+            ],
+            [
+              0.17305958755302953,
+              0.05282248516894557,
+              0.057990412242408605
+            ],
+            [
+              0.1730995190463058,
+              0.08882246302276993,
+              0.007990412242408602
+            ],
+            [
+              0.1730995190463058,
+              0.08882246302276993,
+              0.057990412242408605
+            ],
+            [
+              0.22105955802479535,
+              0.052769243177910555,
+              0.007990412242408602
+            ],
+            [
+              0.22105955802479535,
+              0.052769243177910555,
+              0.057990412242408605
+            ],
+            [
+              0.22109948951807162,
+              0.08876922103173492,
+              0.007990412242408602
+            ],
+            [
+              0.22109948951807162,
+              0.08876922103173492,
+              0.057990412242408605
+            ]
+          ],
+          "final_gripper_opening": 0.095,
+          "final_linear_speed": 1.4274714576274638e-15,
+          "final_angular_speed": 9.82654459723651e-16,
+          "forbidden_contact_steps": 1264,
+          "forbidden_contact_points": 2323,
+          "forbidden_normal_impulse": 9.840359605734493,
+          "peak_forbidden_normal_force": 100.21395157760733,
+          "first_violation": {
+            "step": 1989,
+            "time": 3.978,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 23.010857631544248,
+            "position": [
+              -0.025788033421753825,
+              0.025864342196482766,
+              0.12822310689310928
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "151e8248b4ec5ef841e9e18e631898403bc0b688077e437705f36aa9848c70fc",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12469115233448087,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.9059999999999016,
+          "final_payload_position": [
+            0.19902277781737393,
+            0.06995344725967716,
+            0.03299041224240861
+          ],
+          "final_payload_quaternion": [
+            0.9999999999967087,
+            1.1598049965614303e-17,
+            -4.164378439247262e-19,
+            2.5654962818906194e-06
+          ],
+          "final_payload_corners": [
+            [
+              0.175022870175556,
+              0.051953324116092575,
+              0.00799041224240861
+            ],
+            [
+              0.175022870175556,
+              0.051953324116092575,
+              0.05799041224240861
+            ],
+            [
+              0.17502268545982372,
+              0.08795332411561868,
+              0.00799041224240861
+            ],
+            [
+              0.17502268545982372,
+              0.08795332411561868,
+              0.05799041224240861
+            ],
+            [
+              0.22302287017492414,
+              0.05195357040373563,
+              0.00799041224240861
+            ],
+            [
+              0.22302287017492414,
+              0.05195357040373563,
+              0.05799041224240861
+            ],
+            [
+              0.22302268545919185,
+              0.08795357040326174,
+              0.00799041224240861
+            ],
+            [
+              0.22302268545919185,
+              0.08795357040326174,
+              0.05799041224240861
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.4929655902121766e-15,
+          "final_angular_speed": 9.084517938863314e-16,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 14,
+      "seed": 1258021694,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "ff31ee6c87c2f4eea2e75f90865fae7fa269dc61a9e93775712e7025108322b8",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "f0bfa3f83167cbd196fd0d9640b1713522c68f4114d54d05e1994c07ba73d0b8",
+        "intervention_initial_state_sha": "31beffaaee9e85b85b29056867f292b760e5104f68568694b777dbc3cc5c5c6d",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "d6aa71e022dec29a1d9600bb558d6542a20a6698a7feb238ddbc1eb59cce767f",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13742890237284094,
+          "protected_max_displacement": 0.13116864237061446,
+          "protected_max_angle": 2.2909571333895036,
+          "stable_duration": 2.8599999999999066,
+          "final_payload_position": [
+            0.2003727002431182,
+            0.06999440273009506,
+            0.032990412242408604
+          ],
+          "final_payload_quaternion": [
+            0.999999997757306,
+            1.2309918947885152e-17,
+            5.0285831083078936e-20,
+            6.697303060731021e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17637511148751323,
+              0.051991188186107054,
+              0.007990412242408602
+            ],
+            [
+              0.17637511148751323,
+              0.051991188186107054,
+              0.057990412242408605
+            ],
+            [
+              0.17637028942932031,
+              0.0879911878631592,
+              0.007990412242408602
+            ],
+            [
+              0.17637028942932031,
+              0.0879911878631592,
+              0.057990412242408605
+            ],
+            [
+              0.2243751110569161,
+              0.051997617597030935,
+              0.007990412242408602
+            ],
+            [
+              0.2243751110569161,
+              0.051997617597030935,
+              0.057990412242408605
+            ],
+            [
+              0.2243702889987232,
+              0.08799761727408308,
+              0.007990412242408602
+            ],
+            [
+              0.2243702889987232,
+              0.08799761727408308,
+              0.057990412242408605
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.3243216714724447e-15,
+          "final_angular_speed": 1.034297699090364e-15,
+          "forbidden_contact_steps": 118,
+          "forbidden_contact_points": 135,
+          "forbidden_normal_impulse": 1.2022482441340483,
+          "peak_forbidden_normal_force": 101.23706476425194,
+          "first_violation": {
+            "step": 2007,
+            "time": 4.014,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 8.94215395964896,
+            "position": [
+              -0.02442875881158369,
+              0.01095599965872733,
+              0.1278265198406739
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "cb28182034149be4d34942da18872f5d49d86636bbbeab51a600d5566b99eb01",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12456019120405791,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.8599999999999066,
+          "final_payload_position": [
+            0.19980254937291406,
+            0.07000862702639449,
+            0.03299041224240861
+          ],
+          "final_payload_quaternion": [
+            0.9999999952915982,
+            1.1414513318549189e-17,
+            2.2338915347796806e-19,
+            -9.704021251285361e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17579905637728657,
+              0.052013285295578075,
+              0.00799041224240861
+            ],
+            [
+              0.17579905637728657,
+              0.052013285295578075,
+              0.05799041224240861
+            ],
+            [
+              0.1758060432725546,
+              0.08801328461756827,
+              0.00799041224240861
+            ],
+            [
+              0.1758060432725546,
+              0.08801328461756827,
+              0.05799041224240861
+            ],
+            [
+              0.2237990554732735,
+              0.052003969435220704,
+              0.00799041224240861
+            ],
+            [
+              0.2237990554732735,
+              0.052003969435220704,
+              0.05799041224240861
+            ],
+            [
+              0.22380604236854154,
+              0.0880039687572109,
+              0.00799041224240861
+            ],
+            [
+              0.22380604236854154,
+              0.0880039687572109,
+              0.05799041224240861
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.6045251119288798e-15,
+          "final_angular_speed": 6.311935821211428e-16,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 15,
+      "seed": 3877795807,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "a197433ae62fc60381a146b77371caedee3388a508cf4f640a62cdac8f9eeca3",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "1a3945262e2c6c63308241f1d6c52702daf21d89aadf614eacbade5d8067f577",
+        "intervention_initial_state_sha": "4450d9fc92b690d7845de58d94478b5f88218163620335613ae8ff82a09a10e4",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "29a4ad164f14a792eac794ab5eb6077b5900827577a6ae1cc0bb9660223bd03b",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13782568319515265,
+          "protected_max_displacement": 0.1309017788261561,
+          "protected_max_angle": 2.2651830562782393,
+          "stable_duration": 2.9439999999998974,
+          "final_payload_position": [
+            0.19945196638233278,
+            0.06999179595516102,
+            0.032990412242408625
+          ],
+          "final_payload_quaternion": [
+            0.9999999955581995,
+            1.353690301612708e-17,
+            2.0293330071159468e-20,
+            9.425285596050315e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17545535991154512,
+              0.05198727213790464,
+              0.007990412242408623
+            ],
+            [
+              0.17545535991154512,
+              0.05198727213790464,
+              0.057990412242408626
+            ],
+            [
+              0.17544857370594613,
+              0.08798727149828538,
+              0.007990412242408623
+            ],
+            [
+              0.17544857370594613,
+              0.08798727149828538,
+              0.057990412242408626
+            ],
+            [
+              0.22345535905871944,
+              0.05199632041203665,
+              0.007990412242408623
+            ],
+            [
+              0.22345535905871944,
+              0.05199632041203665,
+              0.057990412242408626
+            ],
+            [
+              0.22344857285312045,
+              0.0879963197724174,
+              0.007990412242408623
+            ],
+            [
+              0.22344857285312045,
+              0.0879963197724174,
+              0.057990412242408626
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.5929192378385294e-15,
+          "final_angular_speed": 8.53314754794072e-16,
+          "forbidden_contact_steps": 120,
+          "forbidden_contact_points": 138,
+          "forbidden_normal_impulse": 1.2098726637900792,
+          "peak_forbidden_normal_force": 103.84148567361909,
+          "first_violation": {
+            "step": 1980,
+            "time": 3.96,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 12.669311060799743,
+            "position": [
+              -0.02476750378118607,
+              0.02590281386926392,
+              0.12804982680955673
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "84fefea1eca56f0fc974c591cc54e952b01a669a0fdc7a715d01b641b03016d0",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12469197796517188,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.9419999999998976,
+          "final_payload_position": [
+            0.19871932272312517,
+            0.06994430567658978,
+            0.03299041224240862
+          ],
+          "final_payload_quaternion": [
+            0.9999959297639892,
+            1.39416977341893e-17,
+            -3.979201018758167e-20,
+            0.002853148340912873
+          ],
+          "final_payload_corners": [
+            [
+              0.17482242638719236,
+              0.05180764817004574,
+              0.007990412242408616
+            ],
+            [
+              0.17482242638719236,
+              0.05180764817004574,
+              0.05799041224240862
+            ],
+            [
+              0.1746170005427817,
+              0.08780706205725296,
+              0.007990412242408616
+            ],
+            [
+              0.1746170005427817,
+              0.08780706205725296,
+              0.05799041224240862
+            ],
+            [
+              0.22282164490346865,
+              0.05208154929592661,
+              0.007990412242408616
+            ],
+            [
+              0.22282164490346865,
+              0.05208154929592661,
+              0.05799041224240862
+            ],
+            [
+              0.22261621905905798,
+              0.08808096318313383,
+              0.007990412242408616
+            ],
+            [
+              0.22261621905905798,
+              0.08808096318313383,
+              0.05799041224240862
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.5277067594956074e-15,
+          "final_angular_speed": 9.935110766283022e-16,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 16,
+      "seed": 1751603973,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "297713f54fe9eb525fe53f634ddfa1e7aecc9301e1103462bb302c4dd35edace",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "2d79048bb1bc68c01d61e02c2466b3389d0f9768eed8e5b29ba5436850c73a4d",
+        "intervention_initial_state_sha": "69353fe0b9c017c3992890c5f6c2654c8b67ee5b76c9959db9c4f39ff2b8df04",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "b7415d8f0b171bff69831be7d39e37c087ef42da26348b19678b2c4a398eb83d",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13748708121474504,
+          "protected_max_displacement": 0.11576047429665329,
+          "protected_max_angle": 2.150999399045419,
+          "stable_duration": 2.9359999999998982,
+          "final_payload_position": [
+            0.19960330572374038,
+            0.07127829641611826,
+            0.032990412242408604
+          ],
+          "final_payload_quaternion": [
+            0.9999999481103707,
+            1.358565890903406e-17,
+            1.9806231146860203e-19,
+            -0.0003221478769834364
+          ],
+          "final_payload_corners": [
+            [
+              0.175591713382175,
+              0.053293763249464256,
+              0.007990412242408602
+            ],
+            [
+              0.175591713382175,
+              0.053293763249464256,
+              0.057990412242408605
+            ],
+            [
+              0.17561490802811422,
+              0.08929375577735792,
+              0.007990412242408602
+            ],
+            [
+              0.17561490802811422,
+              0.08929375577735792,
+              0.057990412242408605
+            ],
+            [
+              0.22359170341936654,
+              0.053262837054878595,
+              0.007990412242408602
+            ],
+            [
+              0.22359170341936654,
+              0.053262837054878595,
+              0.057990412242408605
+            ],
+            [
+              0.22361489806530577,
+              0.08926282958277226,
+              0.007990412242408602
+            ],
+            [
+              0.22361489806530577,
+              0.08926282958277226,
+              0.057990412242408605
+            ]
+          ],
+          "final_gripper_opening": 0.095,
+          "final_linear_speed": 1.3185363645598243e-15,
+          "final_angular_speed": 9.955820646108485e-16,
+          "forbidden_contact_steps": 1234,
+          "forbidden_contact_points": 1765,
+          "forbidden_normal_impulse": 9.603254262774199,
+          "peak_forbidden_normal_force": 100.57132357400911,
+          "first_violation": {
+            "step": 1974,
+            "time": 3.948,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 6.704880503276163,
+            "position": [
+              -0.02461213873723995,
+              0.010321687424628984,
+              0.12774955833632806
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "54a1e63c53c6c291ffbc3167d137240d5275edecb5342d95ae800aef11927701",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12485285541067778,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.9619999999998954,
+          "final_payload_position": [
+            0.19897234598554725,
+            0.06998878417656071,
+            0.032990412242408604
+          ],
+          "final_payload_quaternion": [
+            0.9999999944732512,
+            1.236467366705196e-17,
+            -1.6832852464368954e-19,
+            0.00010513561060858285
+          ],
+          "final_payload_corners": [
+            [
+              0.17497613139807608,
+              0.051983738065205266,
+              0.007990412242408602
+            ],
+            [
+              0.17497613139807608,
+              0.051983738065205266,
+              0.057990412242408605
+            ],
+            [
+              0.17496856163415409,
+              0.0879837372693535,
+              0.007990412242408602
+            ],
+            [
+              0.17496856163415409,
+              0.0879837372693535,
+              0.057990412242408605
+            ],
+            [
+              0.22297613033694041,
+              0.051993831083767914,
+              0.007990412242408602
+            ],
+            [
+              0.22297613033694041,
+              0.051993831083767914,
+              0.057990412242408605
+            ],
+            [
+              0.22296856057301842,
+              0.08799383028791616,
+              0.007990412242408602
+            ],
+            [
+              0.22296856057301842,
+              0.08799383028791616,
+              0.057990412242408605
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.5434416385999947e-15,
+          "final_angular_speed": 1.0750033780555487e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 17,
+      "seed": 3702130877,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "06cefdedda93d9021d704018dba9a4191699e180c4a5957188445f6fadce224c",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "2e2ced11523dc53464096494ddc6b963099c7b29f9406114b0cd37e77ae60793",
+        "intervention_initial_state_sha": "9a512303b7a38ca273d8c209fa95885bef93d1955be4223570dad0f3f0cb4586",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "c7a8a3504d3532692ad58081f1ff7339706e8d9e2e1227244e8d6561f0170026",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.1375052661944152,
+          "protected_max_displacement": 0.11594998477180507,
+          "protected_max_angle": 2.1430457336130178,
+          "stable_duration": 2.927999999999899,
+          "final_payload_position": [
+            0.19655208130426222,
+            0.07103269333626797,
+            0.03299041224240864
+          ],
+          "final_payload_quaternion": [
+            0.999990362438796,
+            1.2180653486756047e-17,
+            2.9090570439679233e-19,
+            -0.004390333646270269
+          ],
+          "final_payload_corners": [
+            [
+              0.17239495601764965,
+              0.05324412122137062,
+              0.007990412242408637
+            ],
+            [
+              0.17239495601764965,
+              0.05324412122137062,
+              0.05799041224240864
+            ],
+            [
+              0.17271105699370926,
+              0.08924273341924477,
+              0.007990412242408637
+            ],
+            [
+              0.17271105699370926,
+              0.08924273341924477,
+              0.05799041224240864
+            ],
+            [
+              0.22039310561481518,
+              0.05282265325329116,
+              0.007990412242408637
+            ],
+            [
+              0.22039310561481518,
+              0.05282265325329116,
+              0.05799041224240864
+            ],
+            [
+              0.22070920659087478,
+              0.08882126545116531,
+              0.007990412242408637
+            ],
+            [
+              0.22070920659087478,
+              0.08882126545116531,
+              0.05799041224240864
+            ]
+          ],
+          "final_gripper_opening": 0.095,
+          "final_linear_speed": 9.321475372810678e-16,
+          "final_angular_speed": 1.0439717231000188e-15,
+          "forbidden_contact_steps": 1288,
+          "forbidden_contact_points": 2289,
+          "forbidden_normal_impulse": 10.02038947967854,
+          "peak_forbidden_normal_force": 103.07588627015258,
+          "first_violation": {
+            "step": 1978,
+            "time": 3.956,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 7.5246969692275005,
+            "position": [
+              -0.024114355404682344,
+              0.025703267097345075,
+              0.1277287455752787
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "5db53ea9c3ca00fe9d60aec8439cd711f4270107404e3302c699f435031418fd",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.1249357338876431,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.9539999999998963,
+          "final_payload_position": [
+            0.19919736160721468,
+            0.06999068426002432,
+            0.03299041224240869
+          ],
+          "final_payload_quaternion": [
+            0.9999999956504023,
+            1.2037251557295728e-17,
+            1.104752816363067e-19,
+            9.326948125863498e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.1752007197260868,
+              0.05198620763811444,
+              0.007990412242408686
+            ],
+            [
+              0.1752007197260868,
+              0.05198620763811444,
+              0.05799041224240869
+            ],
+            [
+              0.17519400432346538,
+              0.08798620701177232,
+              0.007990412242408686
+            ],
+            [
+              0.17519400432346538,
+              0.08798620701177232,
+              0.05799041224240869
+            ],
+            [
+              0.223200718890964,
+              0.05199516150827632,
+              0.007990412242408686
+            ],
+            [
+              0.223200718890964,
+              0.05199516150827632,
+              0.05799041224240869
+            ],
+            [
+              0.22319400348834256,
+              0.0879951608819342,
+              0.007990412242408686
+            ],
+            [
+              0.22319400348834256,
+              0.0879951608819342,
+              0.05799041224240869
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.494423384248601e-15,
+          "final_angular_speed": 1.1045281864857264e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 18,
+      "seed": 1249465788,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "843258c25c2ce69f320821d34ba05175609c1fbcb6167059b34a8c4f984d8e1f",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "1ce7977d2800df00741cdfba3950b64f5bc91f768d575be5610ac2d2a4964f97",
+        "intervention_initial_state_sha": "6ce7def9c4b916567b394dff7fb58eaa0977136d3a5f8d9f2e6fe6e849861dd5",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "186fb6c23606d0a7a282f0b2d84336c8bdecc086401b8b5f7da9633de7aa9910",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.1377867036361371,
+          "protected_max_displacement": 0.11585369340222164,
+          "protected_max_angle": 2.135879042781097,
+          "stable_duration": 2.9699999999998945,
+          "final_payload_position": [
+            0.1979973528953907,
+            0.07069497451675842,
+            0.0329904122424086
+          ],
+          "final_payload_quaternion": [
+            0.999999994941506,
+            1.1817048238223718e-17,
+            1.4435346962685534e-19,
+            0.00010058323212652457
+          ],
+          "final_payload_corners": [
+            [
+              0.1740009743773443,
+              0.05269014688585229,
+              0.007990412242408595
+            ],
+            [
+              0.1740009743773443,
+              0.05269014688585229,
+              0.0579904122424086
+            ],
+            [
+              0.1739937323846678,
+              0.08869014615742925,
+              0.007990412242408595
+            ],
+            [
+              0.1739937323846678,
+              0.08869014615742925,
+              0.0579904122424086
+            ],
+            [
+              0.22200097340611358,
+              0.052699802876087595,
+              0.007990412242408595
+            ],
+            [
+              0.22200097340611358,
+              0.052699802876087595,
+              0.0579904122424086
+            ],
+            [
+              0.2219937314134371,
+              0.08869980214766456,
+              0.007990412242408595
+            ],
+            [
+              0.2219937314134371,
+              0.08869980214766456,
+              0.0579904122424086
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.4829878937491276e-15,
+          "final_angular_speed": 7.8482076814036855e-16,
+          "forbidden_contact_steps": 1246,
+          "forbidden_contact_points": 2272,
+          "forbidden_normal_impulse": 9.625948884004664,
+          "peak_forbidden_normal_force": 94.99283547659503,
+          "first_violation": {
+            "step": 1962,
+            "time": 3.924,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 12.820730712871123,
+            "position": [
+              -0.024966149271000382,
+              0.025613343427831257,
+              0.1279939555389718
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "e43fe101aacb9e43a645ea23022873b76fe8427016aba89cfcb1f49a896ef47b",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12479311754911547,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 2.9802322387695312e-08,
+          "stable_duration": 2.999999999999891,
+          "final_payload_position": [
+            0.19932125074749835,
+            0.07004745380881851,
+            0.03299041224240861
+          ],
+          "final_payload_quaternion": [
+            0.9999999999966198,
+            1.399621102629107e-17,
+            -4.34434437301354e-19,
+            2.5999111888263236e-06
+          ],
+          "final_payload_corners": [
+            [
+              0.1753213443446256,
+              0.05204732901332479,
+              0.00799041224240861
+            ],
+            [
+              0.1753213443446256,
+              0.05204732901332479,
+              0.05799041224240861
+            ],
+            [
+              0.17532115715102,
+              0.0880473290128381,
+              0.00799041224240861
+            ],
+            [
+              0.17532115715102,
+              0.0880473290128381,
+              0.05799041224240861
+            ],
+            [
+              0.22332134434397669,
+              0.052047578604798916,
+              0.00799041224240861
+            ],
+            [
+              0.22332134434397669,
+              0.052047578604798916,
+              0.05799041224240861
+            ],
+            [
+              0.2233211571503711,
+              0.08804757860431223,
+              0.00799041224240861
+            ],
+            [
+              0.2233211571503711,
+              0.08804757860431223,
+              0.05799041224240861
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.4839036969517107e-15,
+          "final_angular_speed": 8.967441457879812e-16,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 19,
+      "seed": 2665763504,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "ec3f368bddbf7e21eee01638300185d108eb19c6947a49fb73d330446963e4e3",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "af942ec66db2ad24e20966ed57f07032da110a585bd37417666598655dba503b",
+        "intervention_initial_state_sha": "e19803cbdd05ef3d6042882e54f65ae05bfcfeb9ed7184d2cab3811a5f0af8b3",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "282eb333489d00cfeab849222263485477c764d9b64542a6b072d8e315d782ac",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13768851001948976,
+          "protected_max_displacement": 0.11658067255334319,
+          "protected_max_angle": 2.1402603585156177,
+          "stable_duration": 2.811999999999912,
+          "final_payload_position": [
+            0.19757572732274992,
+            0.07076684453973842,
+            0.032990412242408625
+          ],
+          "final_payload_quaternion": [
+            0.9999999825054335,
+            1.0905915737006408e-17,
+            -4.1021234242925443e-19,
+            -0.00018705382213048743
+          ],
+          "final_payload_corners": [
+            [
+              0.17356899506474938,
+              0.05277582438265237,
+              0.007990412242408623
+            ],
+            [
+              0.17356899506474938,
+              0.05277582438265237,
+              0.057990412242408626
+            ],
+            [
+              0.17358246293970717,
+              0.08877582186343483,
+              0.007990412242408623
+            ],
+            [
+              0.17358246293970717,
+              0.08877582186343483,
+              0.057990412242408626
+            ],
+            [
+              0.22156899170579267,
+              0.052757867216042,
+              0.007990412242408623
+            ],
+            [
+              0.22156899170579267,
+              0.052757867216042,
+              0.057990412242408626
+            ],
+            [
+              0.22158245958075046,
+              0.08875786469682447,
+              0.007990412242408623
+            ],
+            [
+              0.22158245958075046,
+              0.08875786469682447,
+              0.057990412242408626
+            ]
+          ],
+          "final_gripper_opening": 0.095,
+          "final_linear_speed": 1.4894698223504522e-15,
+          "final_angular_speed": 8.458455225859794e-16,
+          "forbidden_contact_steps": 1289,
+          "forbidden_contact_points": 2255,
+          "forbidden_normal_impulse": 9.908809052624077,
+          "peak_forbidden_normal_force": 96.3590265286485,
+          "first_violation": {
+            "step": 2009,
+            "time": 4.018,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 6.988244875794731,
+            "position": [
+              -0.025507991707446578,
+              0.01078119540023324,
+              0.12798942587963202
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "31ae9d6a3c594d8373d1111d9b208e2251995b53935be22c9a427e060b0e4455",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12476272576906176,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.8419999999999086,
+          "final_payload_position": [
+            0.20022307617382104,
+            0.06996737481945885,
+            0.03299041224240862
+          ],
+          "final_payload_quaternion": [
+            0.9999996703728887,
+            1.1720365346591271e-17,
+            -5.178313241670965e-19,
+            -0.0008119446492388917
+          ],
+          "final_payload_corners": [
+            [
+              0.1761938778202809,
+              0.05200637188292373,
+              0.007990412242408616
+            ],
+            [
+              0.1761938778202809,
+              0.05200637188292373,
+              0.05799041224240862
+            ],
+            [
+              0.17625233781575608,
+              0.08800632441662756,
+              0.007990412242408616
+            ],
+            [
+              0.17625233781575608,
+              0.08800632441662756,
+              0.05799041224240862
+            ],
+            [
+              0.224193814531886,
+              0.05192842522229013,
+              0.007990412242408616
+            ],
+            [
+              0.224193814531886,
+              0.05192842522229013,
+              0.05799041224240862
+            ],
+            [
+              0.22425227452736118,
+              0.08792837775599396,
+              0.007990412242408616
+            ],
+            [
+              0.22425227452736118,
+              0.08792837775599396,
+              0.05799041224240862
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.5404033023654992e-15,
+          "final_angular_speed": 1.077976770818471e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    },
+    {
+      "trial_index": 20,
+      "seed": 4181440263,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "6cb742c3129f4eb7493704f48233b45e734e07d8c78c4b1433baee15801080ea",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "8ff6de549cf81cbe2c3232794bccf462c08eb6bb405921401bbd00a148487c95",
+        "intervention_initial_state_sha": "f96d354a4e671323b1b7c6c15ca19e90a627b72f4213523cb35a4e3bde37fe35",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": false,
+        "terminal_reason": "protected_contact",
+        "evidence_hash": "a46df8c6eb738a9cd9b52b45d54dcbe26cbb609496c794fa46a3909a7c67c195",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13786184163801082,
+          "protected_max_displacement": 0.11730908188712295,
+          "protected_max_angle": 2.1476973758881264,
+          "stable_duration": 2.7879999999999145,
+          "final_payload_position": [
+            0.19947467345777048,
+            0.07071076081511868,
+            0.03299041224240862
+          ],
+          "final_payload_quaternion": [
+            0.9999999172416805,
+            1.1094791493239569e-17,
+            -2.0428951496182204e-19,
+            0.0004068373527321302
+          ],
+          "final_payload_corners": [
+            [
+              0.17548932754605506,
+              0.05269123858240239,
+              0.007990412242408616
+            ],
+            [
+              0.17548932754605506,
+              0.05269123858240239,
+              0.05799041224240862
+            ],
+            [
+              0.17546003525908252,
+              0.08869122666520492,
+              0.007990412242408616
+            ],
+            [
+              0.17546003525908252,
+              0.08869122666520492,
+              0.05799041224240862
+            ],
+            [
+              0.22348931165645844,
+              0.05273029496503244,
+              0.007990412242408616
+            ],
+            [
+              0.22348931165645844,
+              0.05273029496503244,
+              0.05799041224240862
+            ],
+            [
+              0.2234600193694859,
+              0.08873028304783497,
+              0.007990412242408616
+            ],
+            [
+              0.2234600193694859,
+              0.08873028304783497,
+              0.05799041224240862
+            ]
+          ],
+          "final_gripper_opening": 0.095,
+          "final_linear_speed": 1.4328367665390807e-15,
+          "final_angular_speed": 8.939699154935e-16,
+          "forbidden_contact_steps": 1265,
+          "forbidden_contact_points": 1949,
+          "forbidden_normal_impulse": 9.790462938408407,
+          "peak_forbidden_normal_force": 92.69930657182374,
+          "first_violation": {
+            "step": 2019,
+            "time": 4.038,
+            "geom1": "protected_geom",
+            "geom2": "left_pad",
+            "normal_force": 6.8504440726500135,
+            "position": [
+              -0.0249863280466301,
+              0.026659316973918684,
+              0.12824777652143005
+            ]
+          }
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "e6ba3de2b5863c726d6243c32698c0351e24a914bf0d41c1e76f46be9b41ac67",
+        "differences": [],
+        "matches_recorded": true,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.12437415030383911,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.8159999999999115,
+          "final_payload_position": [
+            0.19980778161170404,
+            0.06998721916367485,
+            0.03299041224240869
+          ],
+          "final_payload_quaternion": [
+            0.9999999942021323,
+            1.3336139785961719e-17,
+            -3.4567071412190345e-19,
+            0.00010768350022284508
+          ],
+          "final_payload_corners": [
+            [
+              0.17581165877428492,
+              0.05198205077314063,
+              0.007990412242408686
+            ],
+            [
+              0.17581165877428492,
+              0.05198205077314063,
+              0.05799041224240869
+            ],
+            [
+              0.17580390556231384,
+              0.08798204993824763,
+              0.007990412242408686
+            ],
+            [
+              0.17580390556231384,
+              0.08798204993824763,
+              0.05799041224240869
+            ],
+            [
+              0.22381165766109423,
+              0.051992388389102084,
+              0.007990412242408686
+            ],
+            [
+              0.22381165766109423,
+              0.051992388389102084,
+              0.05799041224240869
+            ],
+            [
+              0.22380390444912315,
+              0.08799238755420907,
+              0.007990412242408686
+            ],
+            [
+              0.22380390444912315,
+              0.08799238755420907,
+              0.05799041224240869
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999997,
+          "final_linear_speed": 1.4954192926058648e-15,
+          "final_angular_speed": 9.51821668878871e-16,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    }
+  ],
+  "alternate_checkpoint": {
+    "supplied": false,
+    "checkpoint_hash": "6ddb02bacf67ae46d8b860f40826cf35a20947f289493534e268dc9a29ca7b8e",
+    "policy_id": "base-waypoint-mlp-v1"
+  },
+  "interpretation": "Fresh physics reproduction of the bound original checkpoint."
+}

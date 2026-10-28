@@ -298,6 +298,8 @@ export function ReplayPair({
   onCamera,
   leftId,
   rightId,
+  leftUrl,
+  rightUrl,
   leftLabel = "Original discovery",
   rightLabel = "Reduced counterexample",
   compact = false,
@@ -307,6 +309,8 @@ export function ReplayPair({
   onCamera: (camera: string) => void;
   leftId?: string;
   rightId?: string;
+  leftUrl?: string;
+  rightUrl?: string;
   leftLabel?: string;
   rightLabel?: string;
   compact?: boolean;
@@ -320,8 +324,8 @@ export function ReplayPair({
     firstFailure?.id ||
     campaign.episodes?.[0]?.id;
   const minimizedId = rightId || campaign.counterexample?.minimized_episode_id;
-  const left = useEpisode(sourceId);
-  const right = useEpisode(minimizedId);
+  const left = useEpisode(leftUrl || sourceId);
+  const right = useEpisode(rightUrl || minimizedId);
   const leftSamples = useMemo(() => samplesOf(left.episode), [left.episode]);
   const rightSamples = useMemo(() => samplesOf(right.episode), [right.episode]);
   const leftRecorded =
@@ -343,8 +347,9 @@ export function ReplayPair({
   const playbackRef = useRef<HTMLDivElement>(null);
   const initialized = useRef("");
   useEffect(() => {
-    if (sourceId && duration && initialized.current !== sourceId) {
-      initialized.current = sourceId;
+    const identity = leftUrl || sourceId;
+    if (identity && duration && initialized.current !== identity) {
+      initialized.current = identity;
       const violation = record(left.episode?.metrics?.first_violation).time;
       const initial =
         typeof violation === "number"
@@ -356,6 +361,7 @@ export function ReplayPair({
     }
   }, [
     sourceId,
+    leftUrl,
     duration,
     left.episode,
     leftRecorded,

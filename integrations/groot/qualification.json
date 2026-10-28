@@ -1,0 +1,608 @@
+{
+  "schema": "forge.groot-qualification/v1",
+  "protocol_id": "forge-groot-libero10-qualification-v1",
+  "status": "not_qualified",
+  "created_on": "2026-10-28",
+  "scope": "GPU qualification package; no GR00T inference, training or LIBERO episode has run in Forge",
+  "source": {
+    "repository": "https://github.com/NVIDIA/Isaac-GR00T",
+    "revision": "944fe70c4fd54e3fcb80a7d7258a328f9c061176",
+    "files": {
+      "README.md": "6943e6a1458709a19d7607d83b17a72258edfb4f2e15ee737e1f859af15dd94e",
+      "LICENSE": "93363510f62ce25ad1a47605b0b06ab335edd82f1a444531c58dd30b6e5a5a0c",
+      "pyproject.toml": "a451af4cf723cc58b710a2f6f3a12a8d7f03850a39cc5ba420a18fcc20e2a3d0",
+      "uv.lock": "0d67d3b0dd41b28375bbc2351eefc9e064cbad2d1c40682a52b97fc625a60f19",
+      ".gitmodules": "6256c2a7bde2f4ac686f0123b250e2a54ddc0a7591bd79f0965ef4ca0d497ef4",
+      "examples/LIBERO/README.md": "3967f78d2706f1a85cfdd88060feb3c551cd0deb6bc96f31ee8598b6f8450b78",
+      "examples/LIBERO/modality.json": "ecb86712195689112f8328c7952523e558d1b495dcbc3be7e2d4cd5a16a0cf6d",
+      "gr00t/eval/sim/LIBERO/libero_env.py": "49a8017517f1f21b7c21bf5f599244189720c83785763e4ab05a3cd0292cf5b1",
+      "gr00t/eval/sim/LIBERO/setup_libero.sh": "11fabf6b1f14d72c53beefbced70c03d7a331068415d8f2b04fc70ec5156b7ea",
+      "gr00t/eval/rollout_policy.py": "e0833d57826f26e5b05e46e202f56eeae53fbb0e22b1c8b7c6b2271320e66132",
+      "gr00t/eval/run_gr00t_server.py": "b94d8f879bc83b97120cfcf3e3c9d7a506d93f633a036474c7f60db81792705d",
+      "gr00t/policy/gr00t_policy.py": "ad1183a3ce1ebed6cace4a9cb8c5a123e823a0760ebf46f3694639a5ad1521ec",
+      "gr00t/policy/server_client.py": "d29d2e68e97ceae1762243315f23f22e696538da60fecd87d9a1391d20f7f1b9",
+      "gr00t/configs/data/embodiment_configs.py": "4c7626426cfd184034df772bca9f1ab5c2014c139c388f833012ca98ac6f948a",
+      "gr00t/data/embodiment_tags.py": "eadc1a395175209cc0d57afa21541cc64be7d848300602209de81fe42713ca47",
+      "examples/finetune.sh": "b743968c44664b4bdc15e134ec1c19d03f3deedd534db9b2f58d4655e0260afb",
+      "gr00t/configs/finetune_config.py": "2084b094c717cefc2f7833df97a7cdac45b0f2ab0ac87504028ceffd2a02015b"
+    },
+    "license": "Apache-2.0",
+    "libero_submodule": {
+      "path": "external_dependencies/LIBERO",
+      "repository": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "revision": "8f1084e3132a39270c3a13ebe37270a43ece2a01",
+      "license": "MIT",
+      "license_sha256": "e2885fd30a08381b799c4a33385522b23d637b4051b8f9a7f9f2519944b68ff6"
+    }
+  },
+  "checkpoint": {
+    "repository": "nvidia/GR00T-N1.7-LIBERO",
+    "revision": "2ea293aa20ba7cf5bbf3ba17a5fbcb1a01cbfe21",
+    "subdirectory": "libero_10",
+    "embodiment_tag": "LIBERO_PANDA",
+    "embodiment_value": "libero_sim",
+    "embodiment_id": 2,
+    "license": "NVIDIA Open Model License",
+    "license_url": "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/",
+    "files": [
+      {
+        "path": "libero_10/config.json",
+        "bytes": 2266,
+        "sha256": "ce763f74ad1cda2ca9e67491229cbc5810d83cae675cb4dad839a69a9731fd97"
+      },
+      {
+        "path": "libero_10/embodiment_id.json",
+        "bytes": 2145,
+        "sha256": "abc4a749389837416a102d9455a8c089336f2e417afb18565703b9944974bc35"
+      },
+      {
+        "path": "libero_10/model-00001-of-00002.safetensors",
+        "bytes": 4990519232,
+        "sha256": "39b7beaadd9a06c87502f2b741a36f939b84941f37fef757c6177e54e34a5eff"
+      },
+      {
+        "path": "libero_10/model-00002-of-00002.safetensors",
+        "bytes": 1919980184,
+        "sha256": "8c4fa56f1b4f25a1a842c811e8a12d2bf6d77d73942f9a04f5b876a11bd6d703"
+      },
+      {
+        "path": "libero_10/model.safetensors.index.json",
+        "bytes": 104985,
+        "sha256": "407804ea5a62f4f8823f48811ae0edbb82fac101e9cf4d7273e6e2f692bb4d59"
+      },
+      {
+        "path": "libero_10/processor_config.json",
+        "bytes": 26935,
+        "sha256": "545bb44c7d8caaf5ac82df55b90831271a1469a4e48adcc9a5f469f064f4e121"
+      },
+      {
+        "path": "libero_10/statistics.json",
+        "bytes": 4298413,
+        "sha256": "cbd3765acaec31fb65109304fa0c2ebd637732ddbe1b3cab0cc11bf244a498e1"
+      }
+    ],
+    "downloaded": false
+  },
+  "backbone": {
+    "repository": "nvidia/Cosmos-Reason2-2B",
+    "revision": "9ce19a195e423419c349abfc86fd07178b230561",
+    "access": "gated; account terms/access not verified",
+    "license": "NVIDIA Open Model License",
+    "downloaded": false,
+    "files": [
+      {
+        "path": "chat_template.json",
+        "bytes": 5502,
+        "hash_kind": "git_blob_sha1",
+        "hash": "e49e75bdda104c8de941eb20e0b3765184fb27bc"
+      },
+      {
+        "path": "config.json",
+        "bytes": 1505,
+        "hash_kind": "git_blob_sha1",
+        "hash": "0cd8c646eb55794594b14fefcd1d3acea5cc000f"
+      },
+      {
+        "path": "generation_config.json",
+        "bytes": 269,
+        "hash_kind": "git_blob_sha1",
+        "hash": "7bb37933d2d86e4ceaabcc6540be989658f238e9"
+      },
+      {
+        "path": "merges.txt",
+        "bytes": 1671839,
+        "hash_kind": "git_blob_sha1",
+        "hash": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0"
+      },
+      {
+        "path": "model.safetensors",
+        "bytes": 4877470304,
+        "hash_kind": "sha256",
+        "hash": "****************************************************************"
+      },
+      {
+        "path": "preprocessor_config.json",
+        "bytes": 390,
+        "hash_kind": "git_blob_sha1",
+        "hash": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64"
+      },
+      {
+        "path": "tokenizer.json",
+        "bytes": 7032403,
+        "hash_kind": "git_blob_sha1",
+        "hash": "c6cc1014128b19d1fc46b1d30a23e3b1d35db421"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "bytes": 10868,
+        "hash_kind": "git_blob_sha1",
+        "hash": "d3d3763207692c78780f4bf42d4dadf49a5c8012"
+      },
+      {
+        "path": "video_preprocessor_config.json",
+        "bytes": 385,
+        "hash_kind": "git_blob_sha1",
+        "hash": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe"
+      },
+      {
+        "path": "vocab.json",
+        "bytes": 2776833,
+        "hash_kind": "git_blob_sha1",
+        "hash": "4783fe10ac3adce15ac8f358ef5462739852c569"
+      }
+    ]
+  },
+  "corrective_dataset_reference": {
+    "repository": "IPEC-COMMUNITY/libero_10_no_noops_1.0.0_lerobot",
+    "revision": "e1a223d30b896c1613f270a2bfc63d382b3de7e1",
+    "downloaded": false,
+    "license_status": "No explicit license field in checked dataset metadata; terms/provenance review remains pending before acquisition.",
+    "role": "Official finetuning example reference, not Forge corrective data"
+  },
+  "runtime": {
+    "host": "Linux x86_64 dGPU",
+    "python": "3.12",
+    "cuda": "12.8",
+    "torch": "2.9.0",
+    "transformers": "4.57.3",
+    "numpy": "1.26.4",
+    "simulation_mujoco": "3.3.1",
+    "server_port": 5555,
+    "server_host": "127.0.0.1",
+    "renderer": "EGL",
+    "ffmpeg_major_allowed": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "minimum_inference_vram_gib": 16,
+    "recommended_training_vram_gib": 40,
+    "isolated_from_gantry": true,
+    "setup_boundary": "Run upstream setup only in a new disposable GPU workspace; it recreates libero_uv and deletes the account .libero config. Never run against this Mac workspace."
+  },
+  "modality": {
+    "video_keys": [
+      "video.image",
+      "video.wrist_image"
+    ],
+    "video_shape": [
+      1,
+      1,
+      256,
+      256,
+      3
+    ],
+    "video_dtype": "uint8",
+    "image_transform": "Pinned wrapper reverses both image axes [::-1, ::-1] from agentview and wrist cameras.",
+    "state_keys": [
+      "state.x",
+      "state.y",
+      "state.z",
+      "state.roll",
+      "state.pitch",
+      "state.yaw",
+      "state.gripper"
+    ],
+    "state_dimensions": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "state_dtype": "float32",
+    "orientation": "roll/pitch/yaw names carry axis-angle exponential coordinates converted from robot0_eef_quat XYZW; not Euler angles.",
+    "language_key": "annotation.human.action.task_description",
+    "language_shape": "batch of one exact task string",
+    "action_keys": [
+      "action.x",
+      "action.y",
+      "action.z",
+      "action.roll",
+      "action.pitch",
+      "action.yaw",
+      "action.gripper"
+    ],
+    "action_dimension": 7,
+    "action_horizon": 16,
+    "model_max_action_horizon": 40,
+    "executed_action_steps": 8,
+    "action_dtype": "float32",
+    "gripper_transform": "executed = -sign(2 * proposed - 1); proposed0 closes (+1), proposed1 opens (-1),0.5 gives0.",
+    "controller": "LIBERO default OSC_POSE; controller frame and scaling must be captured from the loaded environment at qualification. No direct conversion to meters inferred from action shape.",
+    "state_restoration": "Initial resets and full simulation state recorded; mid-episode policy/controller restoration not qualified."
+  },
+  "task_roster": [
+    {
+      "index": 0,
+      "environment": "libero_sim/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket",
+      "partition": "development",
+      "stock_success": "LIBERO env.check_success()",
+      "qualification_nominal_seeds": [
+        920000,
+        920001,
+        920002,
+        920003,
+        920004,
+        920005,
+        920006,
+        920007,
+        920008,
+        920009,
+        920010,
+        920011,
+        920012,
+        920013,
+        920014,
+        920015,
+        920016,
+        920017,
+        920018,
+        920019
+      ]
+    },
+    {
+      "index": 1,
+      "environment": "libero_sim/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket",
+      "partition": "development",
+      "stock_success": "LIBERO env.check_success()",
+      "qualification_nominal_seeds": [
+        920100,
+        920101,
+        920102,
+        920103,
+        920104,
+        920105,
+        920106,
+        920107,
+        920108,
+        920109,
+        920110,
+        920111,
+        920112,
+        920113,
+        920114,
+        920115,
+        920116,
+        920117,
+        920118,
+        920119
+      ]
+    },
+    {
+      "index": 2,
+      "environment": "libero_sim/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it",
+      "partition": "development",
+      "stock_success": "LIBERO env.check_success()",
+      "qualification_nominal_seeds": [
+        920200,
+        920201,
+        920202,
+        920203,
+        920204,
+        920205,
+        920206,
+        920207,
+        920208,
+        920209,
+        920210,
+        920211,
+        920212,
+        920213,
+        920214,
+        920215,
+        920216,
+        920217,
+        920218,
+        920219
+      ]
+    },
+    {
+      "index": 3,
+      "environment": "libero_sim/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it",
+      "partition": "development",
+      "stock_success": "LIBERO env.check_success()",
+      "qualification_nominal_seeds": [
+        920300,
+        920301,
+        920302,
+        920303,
+        920304,
+        920305,
+        920306,
+        920307,
+        920308,
+        920309,
+        920310,
+        920311,
+        920312,
+        920313,
+        920314,
+        920315,
+        920316,
+        920317,
+        920318,
+        920319
+      ]
+    },
+    {
+      "index": 4,
+      "environment": "libero_sim/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+      "partition": "development",
+      "stock_success": "LIBERO env.check_success()",
+      "qualification_nominal_seeds": [
+        920400,
+        920401,
+        920402,
+        920403,
+        920404,
+        920405,
+        920406,
+        920407,
+        920408,
+        920409,
+        920410,
+        920411,
+        920412,
+        920413,
+        920414,
+        920415,
+        920416,
+        920417,
+        920418,
+        920419
+      ]
+    },
+    {
+      "index": 5,
+      "environment": "libero_sim/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy",
+      "partition": "development",
+      "stock_success": "LIBERO env.check_success()",
+      "qualification_nominal_seeds": [
+        920500,
+        920501,
+        920502,
+        920503,
+        920504,
+        920505,
+        920506,
+        920507,
+        920508,
+        920509,
+        920510,
+        920511,
+        920512,
+        920513,
+        920514,
+        920515,
+        920516,
+        920517,
+        920518,
+        920519
+      ]
+    },
+    {
+      "index": 6,
+      "environment": "libero_sim/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate",
+      "partition": "adaptation_held_out",
+      "stock_success": "LIBERO env.check_success()",
+      "qualification_nominal_seeds": [
+        920600,
+        920601,
+        920602,
+        920603,
+        920604,
+        920605,
+        920606,
+        920607,
+        920608,
+        920609,
+        920610,
+        920611,
+        920612,
+        920613,
+        920614,
+        920615,
+        920616,
+        920617,
+        920618,
+        920619
+      ]
+    },
+    {
+      "index": 7,
+      "environment": "libero_sim/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket",
+      "partition": "adaptation_held_out",
+      "stock_success": "LIBERO env.check_success()",
+      "qualification_nominal_seeds": [
+        920700,
+        920701,
+        920702,
+        920703,
+        920704,
+        920705,
+        920706,
+        920707,
+        920708,
+        920709,
+        920710,
+        920711,
+        920712,
+        920713,
+        920714,
+        920715,
+        920716,
+        920717,
+        920718,
+        920719
+      ]
+    },
+    {
+      "index": 8,
+      "environment": "libero_sim/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove",
+      "partition": "adaptation_held_out",
+      "stock_success": "LIBERO env.check_success()",
+      "qualification_nominal_seeds": [
+        920800,
+        920801,
+        920802,
+        920803,
+        920804,
+        920805,
+        920806,
+        920807,
+        920808,
+        920809,
+        920810,
+        920811,
+        920812,
+        920813,
+        920814,
+        920815,
+        920816,
+        920817,
+        920818,
+        920819
+      ]
+    },
+    {
+      "index": 9,
+      "environment": "libero_sim/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it",
+      "partition": "adaptation_held_out",
+      "stock_success": "LIBERO env.check_success()",
+      "qualification_nominal_seeds": [
+        920900,
+        920901,
+        920902,
+        920903,
+        920904,
+        920905,
+        920906,
+        920907,
+        920908,
+        920909,
+        920910,
+        920911,
+        920912,
+        920913,
+        920914,
+        920915,
+        920916,
+        920917,
+        920918,
+        920919
+      ]
+    }
+  ],
+  "incident_selection": {
+    "status": "frozen_candidate_rule_not_executed",
+    "candidate_priority": [
+      3,
+      4,
+      0,
+      1,
+      2,
+      5
+    ],
+    "candidate_task": "libero_sim/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it",
+    "candidate_is_discovered_incident": false,
+    "rule": "Qualify nominal behavior on all ten tasks first. Candidate must pass at least16of20registered nominal resets. Choose first qualifying task in listed priority with a valid reproducible development failure under preregistered perturbations. No final evaluation data may select it. Perturbation feasibility/ranges must be registered before discovery. If no task qualifies, stop and preserve negative evidence.",
+    "held_out_meaning": "Held out from Forge adaptation only; supplied model was already post-trained on LIBERO.",
+    "final_evaluation_status": "Not registered; requires independent fresh suite after checkpoint/analysis freeze."
+  },
+  "gates": [
+    {
+      "id": "compute",
+      "status": "pending",
+      "required_evidence": "Actual GPU identity,driver,VRAM and permitted job interface"
+    },
+    {
+      "id": "access",
+      "status": "pending",
+      "required_evidence": "Exact checkpoint/backbone files and accepted model terms"
+    },
+    {
+      "id": "runtime",
+      "status": "pending",
+      "required_evidence": "Locked dependencies,headless rendering and real open-loop action output"
+    },
+    {
+      "id": "closed_loop",
+      "status": "pending",
+      "required_evidence": "Nominal episodes with camera/action/controller binding"
+    },
+    {
+      "id": "adaptation",
+      "status": "pending",
+      "required_evidence": "Actual changed action-model tensors,reload and same-adapter episodes"
+    },
+    {
+      "id": "evidence",
+      "status": "pending",
+      "required_evidence": "Passing/failing observations,proposed/executed actions,sim states and predicates"
+    },
+    {
+      "id": "operations",
+      "status": "pending",
+      "required_evidence": "Authenticated remote access,cancel/recovery,artifact transfer and stale-result fencing"
+    }
+  ],
+  "never_claim": [
+    "No camera-driven gantry policy",
+    "No discovered drawer incident",
+    "No GR00T policy repair or qualification until actual worker evidence exists",
+    "No hardware validation",
+    "No independent human reviewer or user study"
+  ],
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/NVIDIA/Isaac-GR00T/944fe70c4fd54e3fcb80a7d7258a328f9c061176/README.md",
+      "sha256": "6943e6a1458709a19d7607d83b17a72258edfb4f2e15ee737e1f859af15dd94e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NVIDIA/Isaac-GR00T/944fe70c4fd54e3fcb80a7d7258a328f9c061176/examples/LIBERO/README.md",
+      "sha256": "3967f78d2706f1a85cfdd88060feb3c551cd0deb6bc96f31ee8598b6f8450b78"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NVIDIA/Isaac-GR00T/944fe70c4fd54e3fcb80a7d7258a328f9c061176/examples/LIBERO/modality.json",
+      "sha256": "ecb86712195689112f8328c7952523e558d1b495dcbc3be7e2d4cd5a16a0cf6d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NVIDIA/Isaac-GR00T/944fe70c4fd54e3fcb80a7d7258a328f9c061176/gr00t/eval/sim/LIBERO/libero_env.py",
+      "sha256": "49a8017517f1f21b7c21bf5f599244189720c83785763e4ab05a3cd0292cf5b1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NVIDIA/Isaac-GR00T/944fe70c4fd54e3fcb80a7d7258a328f9c061176/gr00t/policy/server_client.py",
+      "sha256": "d29d2e68e97ceae1762243315f23f22e696538da60fecd87d9a1391d20f7f1b9"
+    },
+    {
+      "url": "https://huggingface.co/nvidia/GR00T-N1.7-LIBERO/tree/2ea293aa20ba7cf5bbf3ba17a5fbcb1a01cbfe21/libero_10"
+    },
+    {
+      "url": "https://huggingface.co/nvidia/Cosmos-Reason2-2B"
+    }
+  ]
+}

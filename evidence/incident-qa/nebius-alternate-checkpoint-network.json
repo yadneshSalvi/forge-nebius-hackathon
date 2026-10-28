@@ -1,0 +1,4 @@
+{
+  "python_network_attempts": [],
+  "scope": "Python socket audit hook; no OS network sandbox claim"
+}

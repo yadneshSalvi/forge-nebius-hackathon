@@ -1,0 +1,52 @@
+{
+  "schema": "forge.upgrade-local-tests/v1",
+  "command": ".venv/bin/python -m pytest -q --basetemp artifacts/forge-upgrade-suite-temp --junitxml artifacts/forge-upgrade-python-tests.xml",
+  "tests": 164,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds_reported": 83.16,
+  "warnings": 2,
+  "warning_scope": "Existing Starlette/httpx and anyio deprecations; no measured-outcome failure",
+  "junit_sha256": "bd96f64f9607eb538dff7d89c98b2e792c73ea03aad12b2b9f357b3689bd51c9",
+  "scientific_source_lock": {
+    "files": {
+      "engine/__init__.py": "5922617de2adfcd5fc4768a5e4a89906aceca464bdc84d72ee185c72e6007acf",
+      "engine/audit.py": "0bb1c548753e03b41af594dce9e4f592f467e50a25011fa5c9bff93c1179fe79",
+      "engine/oracle.py": "f381d7afe978d7fec771a87ba5ede7669a1409ab2061717a2ecb0ad9d55f0a92",
+      "engine/policy.py": "4babde8b5e7b8495706255e472e01fc270c7f54c5d8059584f34ec3990391bfb",
+      "engine/scene.py": "14be9e2e62b1105c1cdfd2d61bfdd6d2f0d1f80b9017eaa543102d20ba5fa870",
+      "engine/simulator.py": "11d90de4bb51f57c278dc62ee0f3189285114213d4c5830db3da73417d2adbff",
+      "engine/spec.py": "55422dad6a465dc23ba58aee79eb4872fa89c28f65516ff59fd46e77ca1b0626",
+      "control/runner.py": "6a142646bfc72a013439ede4c38ab7399e583a4b8e7fae2b8794745eec3fef44",
+      "control/minimizer.py": "86daea1c3777b16efd82f823ec039be67ac400c7867c2be841a45e2d2b64ecea",
+      "control/protocol.py": "58150e87f46cb9b7e683184132458455920c2d4e0d885e070fdc42f141aba2ad",
+      "control/statistics.py": "7bded09a907750becdad29177c2d7556827795377a4a34c5932f09cc1ffd146f",
+      "control/worker.py": "41b73ce01c418e8e18b794a551dc0e8c66082d9edd126a2331484108df3ec293",
+      "control/acquisition.py": "f656b6d5d031a8c5bab9244185141ed0723218480cbcc764077a93acd2b7b8ae",
+      "control/discovery.py": "0c3615835d9d893aad7ed92159448366587c67e9e9f033b36a7ba505fc463ea5",
+      "control/reduction.py": "8c83155505000ee29a68a8009a0ff5ff3cac5080b8997c14d18c96b003e115b8",
+      "control/curriculum.py": "ec76e771929f68aa9bab439cb69736fd8cb195dc5082aea17183195f4aa3d0bb",
+      "control/paired_acquisition.py": "132d3d92ad058bca1d95aea506f49fad82566c81e2bfb0aab92c0dd26ed74ccd",
+      "control/training.py": "055925c10e295537889da271cf99152383aa26825b165a3d98fd285619cdc8d2",
+      "control/evaluation.py": "d68a64b92423e93176a9aa12c72438f6c43c74aa876270c0d767d971ebb65b77",
+      "control/providers.py": "4e4b65e68ce1c7985071d0cc07d58405fd9afac25ceb574a48e86838fdbe673d",
+      "control/challenge.py": "ee81d5c2339004a636ab88e8b3cbbf0892806d8c54ca8e115e2d5bf8edd6a4bb"
+    },
+    "sha256": "82c2ba56954a35125dab10aef6071f56feb65dda6c1e1f41c3bfbd9881ff56aa"
+  },
+  "current_incident_adapter_lock": {
+    "files": {
+      "control/__init__.py": "d72adde1720edc8b790d039d95d81d5490b669327cd18234f20cf590ac2d4ed1",
+      "control/incident.py": "1c65252d0b31e86e4eb18a1a73360c39d25026a68b2ac74da8480f09103835f5",
+      "control/incident_api.py": "25f4587a85e362595f378cac15737ae5e1babfcbc4cccdbe6e2099ad8e239ee3",
+      "control/incident_validation.py": "57f14701500e63d83e4317a1241cfbf1014e39b11670378b364fcbff2412b421",
+      "control/incident_worker.py": "9c09f30550230d572f7a3e2885e6e5957dc8d1f7009d3d825ab595ac35cbb889",
+      "scripts/incident_reproduce.py": "01cbcc632367386a2fe193d6c0b8040878f08c5f436266eea809673cbf109478",
+      "scripts/incident_run.py": "03bf6b8adc20104381009b48fd30cf1a6fce9736e7d44a5628a11f50b48627cd"
+    },
+    "sha256": "6e335a1e498f3e3712d8d86a07e12cef40b2c2d2780865fc8b70efbce75e438c"
+  },
+  "groot_execution_qualified": false,
+  "scope": "Offline unit/integration tests; synthetic GR00T contract tests do not constitute action-model inference or CUDA qualification"
+}

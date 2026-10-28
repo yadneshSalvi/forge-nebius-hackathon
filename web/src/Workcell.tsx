@@ -6,8 +6,9 @@ import {
   Check,
   ChevronRight,
   FlaskConical,
-  Focus,
-  Layers3,
+  GitBranch,
+  Camera,
+  ShieldAlert,
   ShieldCheck,
   Sparkles,
   Target,
@@ -26,6 +27,8 @@ import {
   str,
 } from "./data";
 import { ReplayPair } from "./Replay";
+import { IncidentWorkbench } from "./IncidentWorkbench";
+import { GrootQualification } from "./GrootQualification";
 import {
   ActionLink,
   DataDetails,
@@ -84,74 +87,245 @@ export function Workcell({
           boundaries[selectedBoundary] || sourceCampaign.counterexample,
       }
     : null;
+  const [forkOpen, setForkOpen] = useState(false);
+  const [cameraFailedFor, setCameraFailedFor] = useState("");
+  const { episode: incident } = useEpisode(
+    campaign?.counterexample?.minimized_episode_id,
+  );
+  const reason = str(
+    incident?.terminal_reason ?? record(incident?.outcome).terminal_reason,
+    "measured failure",
+  );
+  const registered = campaign?.registered_report;
+  const registeredNominee = registered?.arms.find(
+    (arm) => arm.name === registered.selected_arm,
+  );
+  const shiftedCount = (value: unknown) => {
+    const item = record(value);
+    return `${item.successes ?? "—"}/${item.total ?? "—"}`;
+  };
   return (
     <>
-      <PageHeading
-        number="01"
-        label="PHYSICAL AI RELIABILITY"
-        title="Find the failure. Forge the fix."
-        description="Turn a physical failure into a smaller counterexample, a corrective curriculum, and a measured policy decision."
-        actions={
-          <>
-            <button className="button button-quiet" onClick={onLaunch}>
-              <FlaskConical size={16} />
-              Start a campaign
-            </button>
-            <button
-              className="button button-primary"
-              onClick={() => navigate("failures")}
-              disabled={!campaign?.counterexample}
-            >
-              <Focus size={16} />
-              Inspect failure
-              <ArrowUpRight size={15} />
-            </button>
-          </>
-        }
-      />
-      <div className="task-ribbon">
-        <div className="task-ribbon-icon">
-          <Layers3 size={20} />
-        </div>
+      <header className="incident-heading">
         <div>
-          <strong>Cartesian kit transfer</strong>
-          <span>
-            3-axis gantry · parallel jaws · protected neighboring object
-          </span>
-        </div>
-        <div className="ribbon-label">
-          <span className="tiny-cross">+</span>LOCAL SIMULATION
+          <Eyebrow>
+            <span className="incident-live-dot" /> INCIDENT WORKBENCH /
+            CARTESIAN KIT TRANSFER
+          </Eyebrow>
+          <h1>
+            Understand the failure.
+            <br />
+            <span>Test what changes it.</span>
+          </h1>
+          <p>
+            Move the payload into the tray. Release it. Leave the neighboring
+            object untouched.
+          </p>
         </div>
         <button className="text-button" onClick={onTask}>
-          Task specification
-          <ArrowUpRight size={14} />
+          Task & policy specification <ArrowUpRight size={14} />
         </button>
-      </div>
+      </header>
       {campaign ? (
         <>
+          <div className="incident-stage">
+            <div className="incident-replay">
+              <ReplayPair
+                campaign={campaign}
+                camera={camera}
+                onCamera={onCamera}
+                leftLabel="Source incident"
+                rightLabel="Reduced scene"
+                compact
+              />
+              <div className="incident-scene-caption">
+                <span>
+                  <span className="legend-dot payload" />
+                  Payload
+                </span>
+                <span>
+                  <span className="legend-dot protected" />
+                  Protected neighbor
+                </span>
+                <span>Recorded state & contact evidence · MuJoCo</span>
+              </div>
+            </div>
+            <aside
+              className="incident-console"
+              aria-label="Incident and intervention"
+            >
+              <figure className="incident-camera">
+                <div className="camera-label">
+                  <Camera size={14} />
+                  <span>ACTUAL SOURCE CAMERA</span>
+                  <span className="mono">STATIC</span>
+                </div>
+                {selectedBoundary !== 0 ? (
+                  <div className="incident-camera-unavailable">
+                    <Camera size={23} />
+                    <strong>No bound camera frame</strong>
+                    <span>
+                      The saved campaign camera belongs to boundary 1. Use the
+                      measured replay for this boundary.
+                    </span>
+                  </div>
+                ) : cameraFailedFor === campaign.id ? (
+                  <div className="incident-camera-unavailable">
+                    <Camera size={23} />
+                    <strong>Camera frame unavailable</strong>
+                    <span>
+                      The rendered frame could not be loaded. Measured replay
+                      remains available.
+                    </span>
+                  </div>
+                ) : (
+                  <img
+                    key={campaign.id}
+                    src={`/api/campaigns/${encodeURIComponent(campaign.id)}/images/source.png`}
+                    alt="Actual MuJoCo-rendered primary source scene showing the gantry, payload, tray and protected neighbor"
+                    onError={() => setCameraFailedFor(campaign.id)}
+                  />
+                )}
+                <figcaption>
+                  {selectedBoundary === 0 ? (
+                    <>
+                      <span className="mono camera-source-id">
+                        Source{" "}
+                        {sourceCampaign?.counterexample?.source_episode_id?.slice(
+                          -14,
+                        )}
+                      </span>
+                      Static inspection frame · not synchronized to replay.
+                    </>
+                  ) : (
+                    "No camera evidence displayed for this selected boundary."
+                  )}
+                  <br />
+                  The current policy does not consume camera pixels.
+                </figcaption>
+              </figure>
+              <div className="incident-verdict">
+                <div className="incident-verdict-label">
+                  <span className="status-dot" />{" "}
+                  {campaign.counterexample
+                    ? "PHYSICS-VERIFIED FAILURE"
+                    : "INCIDENT EVIDENCE PENDING"}
+                </div>
+                <h2>
+                  {campaign.counterexample
+                    ? human(reason)
+                    : "Awaiting a bound incident"}
+                </h2>
+                <p>
+                  {campaign.counterexample ? (
+                    <>
+                      {campaign.counterexample.confirmation?.failures ?? "—"} /{" "}
+                      {campaign.counterexample.confirmation?.total ?? "—"} fresh
+                      confirmation draws failed.
+                    </>
+                  ) : (
+                    "A completed development failure is required for an initial-scene intervention."
+                  )}
+                </p>
+                <button
+                  className="text-button"
+                  disabled={!campaign.counterexample?.minimized_episode_id}
+                  onClick={() =>
+                    onEpisode(
+                      campaign.counterexample?.minimized_episode_id || "",
+                    )
+                  }
+                >
+                  Inspect measured failure <ArrowUpRight size={13} />
+                </button>
+              </div>
+              <div className="incident-fork-action">
+                <button
+                  className="button button-primary"
+                  onClick={() => setForkOpen(true)}
+                  disabled={!campaign.counterexample}
+                >
+                  <GitBranch size={18} />
+                  Fork this failure
+                  <ArrowRight size={16} />
+                </button>
+                <p>
+                  Change one initial-scene factor. Execute both branches with
+                  the same frozen policy and paired nuisance draws.
+                </p>
+              </div>
+            </aside>
+          </div>
+          <div className="incident-policy-note">
+            <span className="mono">CURRENT POLICY</span>
+            <strong>650-parameter waypoint MLP</strong>
+            <span>
+              8 privileged state measurements → 2 waypoints → fixed controller
+            </span>
+            <button className="text-button" onClick={onTask}>
+              Inspect <ArrowUpRight size={12} />
+            </button>
+          </div>
+          {registered ? (
+            <div className="incident-decision-bar">
+              <ShieldAlert size={21} />
+              <div>
+                <span className="mono">REGISTERED RELEASE DECISION</span>
+                <strong>
+                  {registered.decision === "do_not_promote"
+                    ? "Do not promote."
+                    : human(registered.decision)}
+                </strong>
+                <p>
+                  {human(registered.selected_arm)} nominee:{" "}
+                  {shiftedCount(registeredNominee?.shifted)} shifted successes.{" "}
+                  {registered.arms
+                    .filter((arm) => arm.name !== registered.selected_arm)
+                    .map(
+                      (arm) =>
+                        `${human(arm.name)}: ${shiftedCount(arm.shifted)}`,
+                    )
+                    .join(" · ")}
+                  . Base:{" "}
+                  {shiftedCount(
+                    record(record(registered.baseline).strata).shifted,
+                  )}
+                  .
+                </p>
+              </div>
+              <button
+                className="text-button"
+                onClick={() => navigate("reports")}
+              >
+                Review{" "}
+                {num(
+                  record(registered.resources).simulation_episodes,
+                ).toLocaleString()}{" "}
+                outcomes <ArrowRight size={15} />
+              </button>
+            </div>
+          ) : null}
+          <div className="incident-section-heading">
+            <div>
+              <Eyebrow>CONTINUE THE INVESTIGATION</Eyebrow>
+              <h2>Every conclusion has a trail.</h2>
+            </div>
+            <button className="button button-quiet" onClick={onLaunch}>
+              <FlaskConical size={15} />
+              Start another campaign
+            </button>
+          </div>
           <BoundaryTabs
             boundaries={boundaries}
             selected={selectedBoundary}
             onChange={onBoundary}
           />
-          <div className="workcell-composition workcell-home">
-            <div className="microscope-main">
-              <ReplayPair
-                campaign={campaign}
-                camera={camera}
-                onCamera={onCamera}
-              />
-            </div>
-            <EvidenceRail
-              campaign={campaign}
-              onCurriculum={() => navigate("curricula")}
-              onEpisode={onEpisode}
-            />
-            <div className="workcell-lower">
+          <div className="incident-evidence-grid">
+            <div>
               <Panel className="reduction-overview">
                 <SectionTitle
-                  eyebrow="LESS VARIATION. SAME OBSERVED FAILURE."
-                  title="Isolate what matters."
+                  eyebrow="FINITE, TESTED NEIGHBORHOOD"
+                  title="Less variation. Same observed failure."
                 >
                   <ActionLink onClick={() => navigate("failures")}>
                     Open reduction
@@ -184,7 +358,7 @@ export function Workcell({
               <Panel className="loop-panel">
                 <SectionTitle
                   eyebrow="ONE INSPECTABLE CHAIN"
-                  title="Evidence becomes the next experiment."
+                  title="From incident to release decision."
                 />
                 <CampaignStages campaign={campaign} />
                 <div className="loop-footnote">
@@ -195,8 +369,23 @@ export function Workcell({
                   </p>
                 </div>
               </Panel>
+              <GrootQualification />
             </div>
+            <EvidenceRail
+              campaign={campaign}
+              onCurriculum={() => navigate("curricula")}
+              onEpisode={onEpisode}
+            />
           </div>
+          {forkOpen ? (
+            <IncidentWorkbench
+              campaign={sourceCampaign!}
+              sourceId={campaign.counterexample?.minimized_episode_id}
+              onClose={() => setForkOpen(false)}
+              camera={camera}
+              onCamera={onCamera}
+            />
+          ) : null}
         </>
       ) : (
         <div className="empty-instrument">
@@ -225,14 +414,13 @@ export function Workcell({
             }
           >
             {connecting ? (
-              "The interface is requesting the registered task and any recorded campaign evidence."
+              "Requesting the registered task and recorded campaign evidence."
             ) : baseReady ? (
-              "No campaign evidence has been recorded yet. Start a bounded experiment to discover a physical failure, reduce it, and acquire corrective demonstrations."
+              "Start a bounded experiment to discover a physical failure, reduce it, and acquire corrective demonstrations."
             ) : (
               <>
                 Prepare the base checkpoint locally with{" "}
-                <code>python scripts/bootstrap.py</code>. Launch becomes
-                available when its validated artifact is ready.
+                <code>python scripts/bootstrap.py</code>.
               </>
             )}
           </Empty>
@@ -241,6 +429,7 @@ export function Workcell({
     </>
   );
 }
+
 export function EvidenceRail({
   campaign,
   onCurriculum,

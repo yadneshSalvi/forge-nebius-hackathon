@@ -1,0 +1,64 @@
+{
+  "schema": "forge.groot-preflight/v1",
+  "contract_sha256": "b1a060179cb230341a45941b32ad0eebabad5ae20dd010ebb40e62137825df6d",
+  "forge_adapter_lock": {
+    "files": {
+      "integrations/__init__.py": "1b9c6771e20446b663ee67dd5064cf3fca5ddc63326b59313349fe2bc91d0100",
+      "integrations/groot/__init__.py": "6e70c9e23c0b0a4b1e0ece45129fb32f1bf6c0d0a468b314d5fc4de8b3a7b82d",
+      "integrations/groot/contract.py": "8a7a98fb0135dad0d88b6946da249794c284657353e111c9475b88d8825f8db7",
+      "integrations/groot/qualification.json": "4862f0e45a1d18eaf04bc92c384bb51f88b4a0a69ceee93bdef5c33a699987eb",
+      "scripts/groot_qualify.py": "636f8550f5b56b4900633f3bf8f915ee633b3aa00009f072b62c0e2c1d41f7e3",
+      "scripts/groot_policy_server.py": "c2f824fbbe9671dadabd784d0e6860d9fdf9212065fbb8a86a84bb82606d4dc5",
+      "scripts/groot_capture_episode.py": "d8bb537374bf5dff459188c22f3fbc8b1c847d5afed48d22db9b1fc750faa825"
+    },
+    "sha256": "3b9ddf554ea5241c08397ef3fd9cfe4f4c33dcb89bf03ba45e450a4df2b0eef8"
+  },
+  "qualified": false,
+  "checks": {
+    "platform": {
+      "ok": false,
+      "system": "Darwin",
+      "machine": "arm64"
+    },
+    "python": {
+      "ok": false,
+      "version": "3.11.6"
+    },
+    "source": {
+      "ok": false,
+      "reason": "Source checkout not supplied"
+    },
+    "checkpoint": {
+      "ok": false,
+      "reason": "Pinned checkpoint not supplied"
+    },
+    "backbone": {
+      "ok": false,
+      "reason": "Verified isolated backbone cache not supplied"
+    },
+    "cuda": {
+      "ok": false,
+      "reason": "CUDA PyTorch unavailable"
+    },
+    "offline_runtime": {
+      "ok": false,
+      "reason": "Execution must resolve only the verified local model/cache files"
+    }
+  },
+  "execution_claim": "Preflight only; no action-model inference or task episode",
+  "gpu_driver": {
+    "available": false
+  },
+  "ready_for_runtime_probe": false,
+  "status": "blocked",
+  "pending_gates": [
+    "compute",
+    "access",
+    "runtime",
+    "closed_loop",
+    "adaptation",
+    "evidence",
+    "operations"
+  ],
+  "preflight_sha256": "84f15faa09292c3bca4b28b8685b6fdc35ce45337f24c25a266d60a3249367a0"
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "forge.incident-import-acceptance/v1",
+  "scope": "Actual starter plus incident recording in a new disposable data directory; no new inference or physics",
+  "starter": {
+    "imported": true,
+    "already_present": false,
+    "primary_campaign_id": "fg-a7f42769f2",
+    "campaign_ids": [
+      "fg-a7f42769f2",
+      "fg-8a43e14455",
+      "fg-faf764de0e"
+    ],
+    "objects": 9349,
+    "episodes": 9224,
+    "exposure_cases": 500,
+    "sha256": "88aba5c053fde7796a139e1aae9441cfd0aa3d7f9a2b3e834de50cb92e953504",
+    "network_requests": 0,
+    "physics_runs": 0
+  },
+  "incident": {
+    "imported": true,
+    "already_present": false,
+    "incident_id": "inc-657a996d965c43a3a8f9",
+    "archive_sha256": "af6d2ead51ac44bf087569f51fb84a294fa2c85af802620c72ca21cb14d454df",
+    "actual_provider_requests": 4,
+    "local_revalidations": 1,
+    "new_model_calls": 0,
+    "new_physics_episodes": 0,
+    "original_campaigns_modified": false
+  },
+  "repeat": {
+    "imported": false,
+    "already_present": true,
+    "incident_id": "inc-657a996d965c43a3a8f9",
+    "archive_sha256": "af6d2ead51ac44bf087569f51fb84a294fa2c85af802620c72ca21cb14d454df",
+    "actual_provider_requests": 4,
+    "local_revalidations": 1,
+    "new_model_calls": 0,
+    "new_physics_episodes": 0,
+    "original_campaigns_modified": false
+  },
+  "original_rows_before": {
+    "campaigns": 3,
+    "episodes": 9224,
+    "provider_calls": 2,
+    "final_cases": 500,
+    "final_exposures": 1
+  },
+  "original_rows_after": {
+    "campaigns": 3,
+    "episodes": 9224,
+    "provider_calls": 2,
+    "final_cases": 500,
+    "final_exposures": 1
+  },
+  "archive_sha256": "af6d2ead51ac44bf087569f51fb84a294fa2c85af802620c72ca21cb14d454df",
+  "provider_status": [
+    {
+      "purpose": "incident_planner",
+      "provider": "Fireworks",
+      "model": "accounts/fireworks/models/nemotron-3-ultra-nvfp4",
+      "configured": false,
+      "status": "Awaiting accepted paired simulation",
+      "role": "Advisory controlled-intervention planning; simulator decides outcomes",
+      "calls": 2,
+      "local_revalidations": 0,
+      "completed_incidents": 0,
+      "estimated_cost_usd": 0.0122292,
+      "unknown_cost_calls": 0
+    },
+    {
+      "purpose": "incident_planner",
+      "provider": "Nebius",
+      "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+      "configured": false,
+      "status": "Qualified for a bounded incident proposal and local execution",
+      "role": "Advisory controlled-intervention planning; simulator decides outcomes",
+      "calls": 2,
+      "local_revalidations": 1,
+      "completed_incidents": 1,
+      "estimated_cost_usd": 0.012082,
+      "unknown_cost_calls": 0
+    }
+  ],
+  "final_pair_intervention_success": true,
+  "forbidden_call_attempts": 0,
+  "valid": true,
+  "elapsed_seconds": 48.421,
+  "temporary_data_removed": true
+}

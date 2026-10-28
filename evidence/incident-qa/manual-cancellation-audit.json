@@ -1,0 +1,24 @@
+{
+  "all_scheduled_fresh_seeds_unique": true,
+  "fresh_seed_count": 46,
+  "source_anchor_excluded": true,
+  "cancelled_job": "inc-4a21b54a56094365b97e",
+  "cancelled_status": "canceled",
+  "completed_episodes": 6,
+  "planned_episodes": 42,
+  "attempts_retained": 7,
+  "partial_attempt": {
+    "branch": "original",
+    "ended_at": "2026-10-28T17:22:25.949+00:00",
+    "episode_sha": "5dc8407f193d1d42806c82603cafe51950969ec05787807a938e43c474a5d24a",
+    "evidence_hash": "17321c6846e9a84784f00c455e8034259017452d0eb9335a0975f70a98e6bf18",
+    "seed": 4285958900,
+    "started_at": "2026-10-28T17:22:25.872+00:00",
+    "status": "interrupted",
+    "success": null,
+    "terminal_reason": "interrupted",
+    "trace_recorded": false,
+    "trial_index": 3
+  },
+  "remaining_workers": []
+}

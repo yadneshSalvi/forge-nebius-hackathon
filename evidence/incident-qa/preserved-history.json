@@ -1,0 +1,15 @@
+{
+  "schema": "forge.root-history-comparison/v1",
+  "recorded_at": "2026-10-28T17:21:18.420767+00:00",
+  "status": "PASSED",
+  "baseline_rows_checked": {
+    "campaigns": 5,
+    "episodes": 10330,
+    "provider_calls": 4,
+    "events": 827,
+    "attempts": 7
+  },
+  "baseline_objects_checked": 10525,
+  "failures": [],
+  "new_records_allowed": true
+}

@@ -1,0 +1,237 @@
+{
+  "valid": true,
+  "files": 81,
+  "attempts": 42,
+  "pairs": 21,
+  "dense_oracle_audits": 3,
+  "status": "completed",
+  "summary": {
+    "anchor_pairs": 1,
+    "assessment": "fewer_failures_under_tested_intervention",
+    "fresh_pairs": 20,
+    "interpretation": "Paired diagnostic draws at this chosen scene; conservative 95% difference interval excludes source-seed anchor. Abstain when it overlaps zero. No release or generalization claim.",
+    "intervention_successes": 20,
+    "original_successes": 0,
+    "paired_effect": {
+      "delta": 1.0,
+      "delta_interval": [
+        0.6064806405907491,
+        1.0
+      ],
+      "interval_method": "Conservative paired difference: simultaneous Clopper\u2013Pearson bounds on rescue and regression probabilities; one-sided 95% nominal gate uses Bonferroni tails .025.",
+      "nominal_lower_95": 0.6631330580338294,
+      "paired": {
+        "both_failure": 0,
+        "both_success": 0,
+        "regressed": 0,
+        "rescued": 20
+      },
+      "total": 20
+    },
+    "regressions": 0,
+    "rescues": 20
+  },
+  "label": "Post-final diagnostic \u00b7 initial-scene paired reset",
+  "runtime_dependencies_match": true,
+  "runtime_dependency_differences": {},
+  "replay_absolute_tolerance": 1e-06,
+  "replay_relative_tolerance": 1e-07,
+  "platform": {
+    "recorded": {
+      "os": "Darwin",
+      "os_version": "26.5.2",
+      "machine": "arm64"
+    },
+    "current": {
+      "os": "Darwin",
+      "os_version": "26.5.2",
+      "machine": "arm64"
+    }
+  },
+  "reruns": [
+    {
+      "trial_index": 0,
+      "seed": 522552,
+      "validity": {
+        "valid": true,
+        "one_factor_only": true,
+        "nuisance_equal": true,
+        "nuisance_hash": "8fd3f833ad93843a826fcb1469c0c5447c4fc8df8cfc0fe60640eab52cb8f10f",
+        "same_checkpoint": true,
+        "initial_scene_reset_verified": true,
+        "unchanged_initial_coordinates_verified": true,
+        "changed_initial_qpos_indices": [
+          9
+        ],
+        "initial_state_identical": false,
+        "initial_state_note": "Height changes protected center z=h/2; yaw changes payload quaternion. Other state coordinates and all nuisance draws are identical.",
+        "original_initial_state_sha": "bd0da45d5d935ebd34482730f7852f07ed13b336585b5d609fb5a2d85c036448",
+        "intervention_initial_state_sha": "7b9634f3994ac01f6fc0f5745318d5d15734911c64651b80da6289ec0c45b60c",
+        "changed_parameters": {
+          "obstacle_height": {
+            "from": 0.17,
+            "to": 0.065
+          }
+        }
+      },
+      "original": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "91ac903b3e0e5a0c2f50aa07770b5144deca5eaddda4c16d8c5e5f3bd4ee85f4",
+        "differences": [],
+        "matches_recorded": null,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.22489832849399954,
+          "protected_max_displacement": 4.873446102557355e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.973999999999894,
+          "final_payload_position": [
+            0.2002759867866218,
+            0.06994497311151461,
+            0.03299041224240862
+          ],
+          "final_payload_quaternion": [
+            0.999997874378729,
+            1.191324503739531e-17,
+            -3.033511168098376e-19,
+            -0.00206185305568929
+          ],
+          "final_payload_corners": [
+            [
+              0.17620196429381998,
+              0.05204409489238604,
+              0.007990412242408616
+            ],
+            [
+              0.17620196429381998,
+              0.05204409489238604,
+              0.05799041224240862
+            ],
+            [
+              0.17635041739827387,
+              0.08804378880324835,
+              0.007990412242408616
+            ],
+            [
+              0.17635041739827387,
+              0.08804378880324835,
+              0.05799041224240862
+            ],
+            [
+              0.22420155617496976,
+              0.05184615741978087,
+              0.007990412242408616
+            ],
+            [
+              0.22420155617496976,
+              0.05184615741978087,
+              0.05799041224240862
+            ],
+            [
+              0.22435000927942364,
+              0.08784585133064318,
+              0.007990412242408616
+            ],
+            [
+              0.22435000927942364,
+              0.08784585133064318,
+              0.05799041224240862
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.5460373562673148e-15,
+          "final_angular_speed": 1.252003103429526e-15,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      },
+      "intervention": {
+        "success": true,
+        "terminal_reason": "success",
+        "evidence_hash": "312adb5e730adb5d9b9e3f11b45d9730c084605755279c908208ae6cd6ded1da",
+        "differences": [],
+        "matches_recorded": null,
+        "metrics": {
+          "duration": 9.399999999999809,
+          "physics_steps": 4700,
+          "max_payload_height": 0.13149784609964976,
+          "protected_max_displacement": 4.873446102558049e-05,
+          "protected_max_angle": 0.0,
+          "stable_duration": 2.973999999999894,
+          "final_payload_position": [
+            0.19944805587822284,
+            0.06999384977752374,
+            0.03299041224240863
+          ],
+          "final_payload_quaternion": [
+            0.9999999957134341,
+            1.1973327906346066e-17,
+            -2.750598556149151e-19,
+            9.259120720192227e-05
+          ],
+          "final_payload_corners": [
+            [
+              0.17545138957317813,
+              0.05198940570822984,
+              0.00799041224240863
+            ],
+            [
+              0.17545138957317813,
+              0.05198940570822984,
+              0.05799041224240863
+            ],
+            [
+              0.1754447230062882,
+              0.08798940509096435,
+              0.00799041224240863
+            ],
+            [
+              0.1754447230062882,
+              0.08798940509096435,
+              0.05799041224240863
+            ],
+            [
+              0.2234513887501575,
+              0.05199829446408312,
+              0.00799041224240863
+            ],
+            [
+              0.2234513887501575,
+              0.05199829446408312,
+              0.05799041224240863
+            ],
+            [
+              0.22344472218326755,
+              0.08799829384681764,
+              0.00799041224240863
+            ],
+            [
+              0.22344472218326755,
+              0.08799829384681764,
+              0.05799041224240863
+            ]
+          ],
+          "final_gripper_opening": 0.09499999999999999,
+          "final_linear_speed": 1.3257798616048261e-15,
+          "final_angular_speed": 7.520282382581414e-16,
+          "forbidden_contact_steps": 0,
+          "forbidden_contact_points": 0,
+          "forbidden_normal_impulse": 0.0,
+          "peak_forbidden_normal_force": 0.0,
+          "first_violation": null
+        }
+      }
+    }
+  ],
+  "alternate_checkpoint": {
+    "supplied": true,
+    "checkpoint_hash": "4713496b753d6e8fd11707ada5ace85552c5666bad4202490e2d051f3004f299",
+    "policy_id": "source-waypoint-seed-101"
+  },
+  "interpretation": "Alternate checkpoint diagnostic; original expected outcomes are not imposed."
+}

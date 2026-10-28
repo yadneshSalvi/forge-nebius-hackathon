@@ -1,0 +1,50 @@
+{
+  "status": "PASSED",
+  "cases": [
+    {
+      "case": "condition_rebound",
+      "exit_code": 1,
+      "rejected": true,
+      "outer_checksums_recalculated": true,
+      "reason": "{\"valid\": false, \"error\": \"Planner receipt does not bind this intervention\"}",
+      "network": {
+        "python_network_attempts": [],
+        "scope": "Python socket audit hook; no OS network sandbox claim"
+      }
+    },
+    {
+      "case": "outcome_rebound",
+      "exit_code": 1,
+      "rejected": true,
+      "outer_checksums_recalculated": true,
+      "reason": "{\"valid\": false, \"error\": \"Attempt evidence binding mismatch\"}",
+      "network": {
+        "python_network_attempts": [],
+        "scope": "Python socket audit hook; no OS network sandbox claim"
+      }
+    },
+    {
+      "case": "evidence_removed",
+      "exit_code": 1,
+      "rejected": true,
+      "outer_checksums_recalculated": true,
+      "reason": "{\"valid\": false, \"error\": \"[Errno 2] No such file or directory: '/private/var/folders/7c/2w_8g2bs7m72pq5v461b05zw0000gn/T/forge-incident-replay-5tuwflgo/rejection-evidence_removed/episodes/episode-1-original.json'\"}",
+      "network": {
+        "python_network_attempts": [],
+        "scope": "Python socket audit hook; no OS network sandbox claim"
+      }
+    },
+    {
+      "case": "incompatible_checkpoint",
+      "exit_code": 1,
+      "rejected": true,
+      "outer_checksums_recalculated": true,
+      "reason": "{\"valid\": false, \"error\": \"incompatible observation/action contract\"}",
+      "network": {
+        "python_network_attempts": [],
+        "scope": "Python socket audit hook; no OS network sandbox claim"
+      }
+    }
+  ],
+  "scope": "Inner consistency rejection; not a digital-signature/authorship claim"
+}

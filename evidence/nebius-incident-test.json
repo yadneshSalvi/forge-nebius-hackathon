@@ -1,0 +1,44 @@
+{
+  "id": "inc-657a996d965c43a3a8f9",
+  "status": "completed",
+  "summary": {
+    "anchor_pairs": 1,
+    "assessment": "fewer_failures_under_tested_intervention",
+    "fresh_pairs": 20,
+    "interpretation": "Paired diagnostic draws at this chosen scene; conservative 95% difference interval excludes source-seed anchor. Abstain when it overlaps zero. No release or generalization claim.",
+    "intervention_successes": 20,
+    "original_successes": 0,
+    "paired_effect": {
+      "delta": 1.0,
+      "delta_interval": [
+        0.6064806405907491,
+        1.0
+      ],
+      "interval_method": "Conservative paired difference: simultaneous Clopper\u2013Pearson bounds on rescue and regression probabilities; one-sided 95% nominal gate uses Bonferroni tails .025.",
+      "nominal_lower_95": 0.6631330580338294,
+      "paired": {
+        "both_failure": 0,
+        "both_success": 0,
+        "regressed": 0,
+        "rescued": 20
+      },
+      "total": 20
+    },
+    "regressions": 0,
+    "rescues": 20
+  },
+  "validity": {
+    "all_pairs_valid": true,
+    "initial_scene_reset_verified": true,
+    "scope": "Total scene intervention effect in the gantry simulation, including instrumented policy observations. Excluded from registered statistics, nomination and training. No mid-episode fork or perception-only claim.",
+    "source_reproduction_verified": true,
+    "valid": true
+  },
+  "zip": "evidence/nebius-incident-test.zip",
+  "bytes": 2179312,
+  "sha256": "af6d2ead51ac44bf087569f51fb84a294fa2c85af802620c72ca21cb14d454df",
+  "planner_receipt_sha": "2110fff30b2290e6945754240a69bd804de407fb0536850f4f129612b77e2f31",
+  "config_sha": "cd35ccb2e14ddef081c241a19c0b39f5ffbc99c9509270cf8a05d2defbbbaf03",
+  "adapter_sha": "9614004c20a1ffa41baf221d66be799e85b6f59d595694c436b9afc80f493165",
+  "scientific_source_sha": "82c2ba56954a35125dab10aef6071f56feb65dda6c1e1f41c3bfbd9881ff56aa"
+}

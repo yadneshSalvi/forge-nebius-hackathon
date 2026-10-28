@@ -1,0 +1,523 @@
+{
+  "schema": "forge.upgrade-web-qa/v1",
+  "scope": "Actual local app browser QA; any transport-fixture variants are explicitly labeled inside their report. No new inference; the live incident execution is recorded separately.",
+  "reports": {
+    "incident/ui.json": {
+      "sha256": "ca4411cb70589b59a93b873a4ce21e02a0814225812e8eeac5f4e9403aac3149",
+      "report": {
+        "errors": [],
+        "firstViewport": {
+          ".incident-replay": {
+            "x": 234,
+            "y": 266.75,
+            "width": 860,
+            "height": 568,
+            "bottom": 834.75
+          },
+          ".incident-camera": {
+            "x": 1113,
+            "y": 267.75,
+            "width": 296,
+            "height": 245.296875,
+            "bottom": 513.046875
+          },
+          ".incident-fork-action": {
+            "x": 1113,
+            "y": 707.328125,
+            "width": 296,
+            "height": 126.421875,
+            "bottom": 833.75
+          },
+          ".incident-policy-note": {
+            "x": 234,
+            "y": 834.75,
+            "width": 1176,
+            "height": 60,
+            "bottom": 894.75
+          },
+          ".incident-decision-bar": {
+            "x": 234,
+            "y": 894.75,
+            "width": 1176,
+            "height": 91.140625,
+            "bottom": 985.890625
+          }
+        },
+        "checks": [
+          {
+            "width": 320,
+            "view": "workcell",
+            "overflow": false
+          },
+          {
+            "width": 320,
+            "view": "campaigns",
+            "overflow": false
+          },
+          {
+            "width": 320,
+            "view": "failures",
+            "overflow": false
+          },
+          {
+            "width": 320,
+            "view": "curricula",
+            "overflow": false
+          },
+          {
+            "width": 320,
+            "view": "policies",
+            "overflow": false
+          },
+          {
+            "width": 320,
+            "view": "reports",
+            "overflow": false
+          },
+          {
+            "width": 390,
+            "view": "workcell",
+            "overflow": false
+          },
+          {
+            "width": 390,
+            "view": "campaigns",
+            "overflow": false
+          },
+          {
+            "width": 390,
+            "view": "failures",
+            "overflow": false
+          },
+          {
+            "width": 390,
+            "view": "curricula",
+            "overflow": false
+          },
+          {
+            "width": 390,
+            "view": "policies",
+            "overflow": false
+          },
+          {
+            "width": 390,
+            "view": "reports",
+            "overflow": false
+          },
+          {
+            "width": 768,
+            "view": "workcell",
+            "overflow": false
+          },
+          {
+            "width": 768,
+            "view": "campaigns",
+            "overflow": false
+          },
+          {
+            "width": 768,
+            "view": "failures",
+            "overflow": false
+          },
+          {
+            "width": 768,
+            "view": "curricula",
+            "overflow": false
+          },
+          {
+            "width": 768,
+            "view": "policies",
+            "overflow": false
+          },
+          {
+            "width": 768,
+            "view": "reports",
+            "overflow": false
+          },
+          {
+            "width": 1280,
+            "view": "workcell",
+            "overflow": false
+          },
+          {
+            "width": 1280,
+            "view": "campaigns",
+            "overflow": false
+          },
+          {
+            "width": 1280,
+            "view": "failures",
+            "overflow": false
+          },
+          {
+            "width": 1280,
+            "view": "curricula",
+            "overflow": false
+          },
+          {
+            "width": 1280,
+            "view": "policies",
+            "overflow": false
+          },
+          {
+            "width": 1280,
+            "view": "reports",
+            "overflow": false
+          },
+          {
+            "width": 1440,
+            "view": "workcell",
+            "overflow": false
+          },
+          {
+            "width": 1440,
+            "view": "campaigns",
+            "overflow": false
+          },
+          {
+            "width": 1440,
+            "view": "failures",
+            "overflow": false
+          },
+          {
+            "width": 1440,
+            "view": "curricula",
+            "overflow": false
+          },
+          {
+            "width": 1440,
+            "view": "policies",
+            "overflow": false
+          },
+          {
+            "width": 1440,
+            "view": "reports",
+            "overflow": false
+          }
+        ],
+        "axe": [
+          {
+            "width": 390,
+            "view": "workcell",
+            "violations": []
+          },
+          {
+            "width": 390,
+            "view": "campaigns",
+            "violations": []
+          },
+          {
+            "width": 390,
+            "view": "failures",
+            "violations": []
+          },
+          {
+            "width": 390,
+            "view": "curricula",
+            "violations": []
+          },
+          {
+            "width": 390,
+            "view": "policies",
+            "violations": []
+          },
+          {
+            "width": 390,
+            "view": "reports",
+            "violations": []
+          },
+          {
+            "width": 1440,
+            "view": "workcell",
+            "violations": []
+          },
+          {
+            "width": 1440,
+            "view": "campaigns",
+            "violations": []
+          },
+          {
+            "width": 1440,
+            "view": "failures",
+            "violations": []
+          },
+          {
+            "width": 1440,
+            "view": "curricula",
+            "violations": []
+          },
+          {
+            "width": 1440,
+            "view": "policies",
+            "violations": []
+          },
+          {
+            "width": 1440,
+            "view": "reports",
+            "violations": []
+          }
+        ]
+      }
+    },
+    "incident/viewport.json": {
+      "sha256": "978c7b9c060e59dcd8b4e75a6b0c8ac5628503c54e514b248f26d3e6a3659296",
+      "report": [
+        {
+          "width": 1280,
+          "height": 720,
+          "positions": {
+            ".incident-replay": {
+              "top": 237.265625,
+              "bottom": 686.46875,
+              "height": 449.203125
+            },
+            ".incident-camera": {
+              "top": 238.265625,
+              "bottom": 437.953125,
+              "height": 199.6875
+            },
+            ".incident-fork-action .button": {
+              "top": 566.046875,
+              "bottom": 612.046875,
+              "height": 46
+            },
+            ".replay-controls": {
+              "top": 564.265625,
+              "bottom": 616.265625,
+              "height": 52
+            },
+            ".incident-policy-note": {
+              "top": 686.46875,
+              "bottom": 746.46875,
+              "height": 60
+            }
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "positions": {
+            ".incident-replay": {
+              "top": 266.75,
+              "bottom": 834.75,
+              "height": 568
+            },
+            ".incident-camera": {
+              "top": 267.75,
+              "bottom": 529.4375,
+              "height": 261.6875
+            },
+            ".incident-fork-action .button": {
+              "top": 707.328125,
+              "bottom": 753.328125,
+              "height": 46
+            },
+            ".replay-controls": {
+              "top": 696.75,
+              "bottom": 754.75,
+              "height": 58
+            },
+            ".incident-policy-note": {
+              "top": 834.75,
+              "bottom": 894.75,
+              "height": 60
+            }
+          }
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "positions": {
+            ".incident-replay": {
+              "top": 392.5,
+              "bottom": 1339.5,
+              "height": 947
+            },
+            ".incident-camera": {
+              "top": 1352.5,
+              "bottom": 1640.375,
+              "height": 287.875
+            },
+            ".incident-fork-action .button": {
+              "top": 1789.0625,
+              "bottom": 1835.0625,
+              "height": 46
+            },
+            ".replay-controls": {
+              "top": 1119.5,
+              "bottom": 1219.5,
+              "height": 100
+            },
+            ".incident-policy-note": {
+              "top": 1896.34375,
+              "bottom": 1976.34375,
+              "height": 80
+            }
+          }
+        }
+      ]
+    },
+    "incident/controls.json": {
+      "sha256": "192a6666d22fd4689fd5f346dcaec20eae6ae0ed253b68f4464a96584a9c0c3d",
+      "report": {
+        "forkRestoresFocus": true,
+        "secondaryCameraHidden": true,
+        "missingImageExplained": true,
+        "offlineEvidenceRetained": true,
+        "reconnect": true,
+        "drawerAxe": [],
+        "mobileNavigation": true
+      }
+    },
+    "incident/bindings.json": {
+      "sha256": "3bc670a730e035cce91d22c6492e47bb234950a8f552a4a7d6ea78117d8a475b",
+      "report": {
+        "qualificationGates": 7,
+        "historySynchronizesValue": true,
+        "historySynchronizesSource": true,
+        "v1NoCrossScopeRegisteredBar": true,
+        "finalCampaignPendingIncidentHonest": true,
+        "finalCampaignForkDisabled": true
+      }
+    },
+    "incident/export-download.json": {
+      "sha256": "c8b89ab97a6384a6e30905df4a5e2861ab673b25606e122df274f10c6becca37",
+      "report": {
+        "pageErrors": [],
+        "mutations": [],
+        "incident": "inc-657a996d965c43a3a8f9",
+        "pendingVisible": true,
+        "errorVisible": true,
+        "downloadFailure": null,
+        "blobDownload": true,
+        "filename": "forge-inc-657a996d965c43a3a8f9-incident.zip",
+        "expectedFilename": "forge-inc-657a996d965c43a3a8f9-incident.zip",
+        "bytes": 2179312,
+        "zipSignature": true,
+        "sourceBlob": {
+          "bytes": 2179312,
+          "sha256": "af6d2ead51ac44bf087569f51fb84a294fa2c85af802620c72ca21cb14d454df"
+        },
+        "exactFetchedBytes": true,
+        "playwrightAttachmentBodyBytes": 0,
+        "sha256": "af6d2ead51ac44bf087569f51fb84a294fa2c85af802620c72ca21cb14d454df",
+        "successStatus": true,
+        "axe": []
+      }
+    },
+    "incident/terminal-history.json": {
+      "sha256": "e9afd642e41f94b5ed1487aa111d9cdfc8bb2622dca8939019a1cd4df09d7897",
+      "report": {
+        "fixture": "Read-only browser transport fixture: stale queued history and a running detail precede the real canceled API response. Failed/interrupted variants only alter private browser responses; no server writes or physics.",
+        "mutations": [],
+        "pageErrors": [],
+        "canceled": "inc-4a21b54a56094365b97e",
+        "completed": "inc-c8ce5416bb5b4516ab8a",
+        "staleFixtureVisible": true,
+        "canceledHeading": true,
+        "partialCountExact": true,
+        "partialEvidenceExplicit": true,
+        "historyTerminalRetained": true,
+        "failedCopy": true,
+        "interruptedCopy": true,
+        "axe": []
+      }
+    },
+    "replay-integrity.json": {
+      "sha256": "21a4878d9cdf1cb7b960d84686eab6de8ac851347b030c7774f8656fe27e0481",
+      "report": {
+        "campaign": "fg-a7f42769f2",
+        "cluster": {
+          "urlBoundary": "1",
+          "sourceMatches": true,
+          "reducedMatches": true,
+          "hypothesisLabel": "CAMPAIGN-WIDE HYPOTHESIS\n?"
+        },
+        "contact": {
+          "firstViolationSeconds": 3.966,
+          "selectedSampleSeconds": 4,
+          "precedingSampleSeconds": 3.96,
+          "firstAtOrAfter": true
+        },
+        "playback": {
+          "measurement": "DOM playback-state commits with two WebGL scenes; not a GPU frame-time benchmark",
+          "wallSeconds": 1.6048999999761582,
+          "simulationAdvanceSeconds": 1.5670000000000002,
+          "stateCommits": 43,
+          "commitsPerSecond": 26.79294660143236
+        },
+        "webglFallback": {
+          "labeledPanes": 2,
+          "staticTopViews": 2,
+          "objectInspectorAvailable": true,
+          "axeViolations": []
+        }
+      }
+    },
+    "responsive-accessibility.json": {
+      "sha256": "09c60681614350ea9fc045804ca3a8bc183ca36f7ee88abed7fce3f531b992a4",
+      "report": {
+        "campaign": "fg-a7f42769f2",
+        "overflow": [],
+        "axe": [],
+        "pageErrors": [],
+        "interactions": {
+          "challengeRangeValues": true,
+          "canvases": 2,
+          "launchReview": true,
+          "dialogRestoresFocus": true,
+          "keyboardSteps": true,
+          "keyboardPlayback": true,
+          "objectInspector": true,
+          "oracleRules": true,
+          "offlineEvidenceRetained": true,
+          "networkRecovered": true,
+          "mobileNavigation": true
+        },
+        "screenshots": [
+          "workcell-390.png",
+          "campaigns-390.png",
+          "curricula-390.png",
+          "policies-390.png",
+          "reports-390.png",
+          "workcell-1440.png",
+          "campaigns-1440.png",
+          "curricula-1440.png",
+          "policies-1440.png",
+          "reports-1440.png"
+        ],
+        "challengeRangeValues": [
+          {
+            "id": "challenge-obstacle_height",
+            "visible_control": 0.065,
+            "submitted_state": 0.065
+          },
+          {
+            "id": "challenge-friction",
+            "visible_control": 0.65,
+            "submitted_state": 0.65
+          },
+          {
+            "id": "challenge-payload_yaw",
+            "visible_control": 0,
+            "submitted_state": 0
+          },
+          {
+            "id": "challenge-tray_offset_y",
+            "visible_control": 0,
+            "submitted_state": 0
+          }
+        ]
+      }
+    },
+    "entry-selection.json": {
+      "sha256": "047d03376c21b7a6174b9feb4a69b2d2ef58d6ee5e367af20c39f43bf151c4de",
+      "report": {
+        "bareCampaign": "fg-a7f42769f2",
+        "opensParentInvestigation": true,
+        "explicitHistoricalCampaign": "fg-3da83888e9",
+        "explicitQueryPreserved": true
+      }
+    }
+  }
+}
