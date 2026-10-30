@@ -1,5 +1,7 @@
 # FORGE
 
+**Submission demo:** [Watch on YouTube](https://www.youtube.com/watch?v=NwH7Vk_6f9A).
+
 A local reliability workbench for a simulated robot policy. Replay an incident, fork one scene condition under the same checkpoint, and export an executable regression test. The underlying investigation also discovers failures, reduces them, collects successful corrections and trains actual weights.
 
 FORGE uses real MuJoCo contact physics and a compact learned waypoint policy for an original Cartesian gantry. NVIDIA Nemotron Ultra on Nebius Token Factory proposed a reviewed scene intervention that was executed on 20 fresh paired reset draws. Fireworks Ultra and Together Super VL support the retained development investigation. The physics oracle decides outcomes. A pinned GR00T N1.7 / LIBERO worker package is included; its GPU execution and training remain pending.
