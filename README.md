@@ -24,6 +24,8 @@ npm start
 
 Open [FORGE](http://127.0.0.1:4401). The [included recordings](evidence/README.md) contain actual campaigns and the completed incident diagnostic, with immutable physics, weights, NVIDIA receipts and evaluation evidence. Both imports make no network, physics or training calls. The starter requires an empty data store or an identical previous import; the incident add-on requires its exact parent/source/checkpoint and refuses conflicting local work. Runtime data lives in ignored `data/`.
 
+For a short walkthrough using only saved evidence, follow the [recorded demo guide](docs/DEMO.md).
+
 The demonstrated height intervention produced **20/20 paired rescues** under the frozen base checkpoint, with a conservative 95% difference interval of +60.65 to +100 percentage points. This is a diagnostic scene change, not learned policy improvement. The original registered comparison remains **do not promote**: minimized 297/300 shifted successes versus 300/300 for both random and source correction comparators.
 
 To build a new base locally instead of importing a recording:

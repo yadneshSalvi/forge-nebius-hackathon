@@ -95,12 +95,14 @@ function parameters(source?: Source) {
 export function IncidentWorkbench({
   campaign,
   sourceId,
+  initialView = "new",
   onClose,
   camera,
   onCamera,
 }: {
   campaign: Campaign;
   sourceId?: string;
+  initialView?: "saved" | "new";
   onClose: () => void;
   camera: string;
   onCamera: (v: string) => void;
@@ -113,6 +115,9 @@ export function IncidentWorkbench({
   const [job, setJob] = useState<IncidentJob | null>(null);
   const [replayTrial, setReplayTrial] = useState(0);
   const [history, setHistory] = useState<IncidentJob[]>([]);
+  const [historyLoaded, setHistoryLoaded] = useState(false);
+  const [view, setView] = useState(initialView);
+  const initialInspectionDone = useRef(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
   const [retry, setRetry] = useState(0);
@@ -152,10 +157,35 @@ export function IncidentWorkbench({
         setHistory(
           list.filter((item) => item.config?.campaign_id === campaign.id),
         );
+        setHistoryLoaded(true);
       })
-      .catch(() => {});
+      .catch((err) => {
+        if (!abort.signal.aborted) {
+          setHistoryLoaded(true);
+          setError(err.message);
+        }
+      });
     return () => abort.abort();
   }, [campaign.id, sourceId, retry]);
+  useEffect(() => {
+    if (!context || !historyLoaded || initialInspectionDone.current) return;
+    initialInspectionDone.current = true;
+    if (initialView !== "saved") return;
+    const completedRuns = history.filter(
+      (item) =>
+        item.status === "completed" &&
+        context.sources.some(
+          (s) => s.source_episode_id === item.config.source_episode_id,
+        ),
+    );
+    const preferred =
+      completedRuns.find((item) => !!item.config.planner_receipt_sha) ||
+      completedRuns.find(
+        (item) => item.config.source_episode_id === sourceId,
+      ) ||
+      completedRuns[0];
+    if (preferred) selectJob(preferred);
+  }, [context, history, historyLoaded, initialView, sourceId]);
   useEffect(() => {
     if (!job || !running(job)) return;
     const abort = new AbortController();
@@ -259,21 +289,27 @@ export function IncidentWorkbench({
       setPending(false);
     }
   }
+  function selectJob(result: IncidentJob) {
+    setJob(result);
+    setSource(str(result.config.source_episode_id));
+    setFactor(str(result.config.factor));
+    setValue(num(result.config.value));
+    setRepeats(num(result.config.nuisance_repeats, 1));
+    setReplayTrial(0);
+    key.current = actionKey("incident");
+  }
   async function inspect(id: string) {
     setError("");
+    setPending(true);
     try {
       const result = await request<IncidentJob>(
         `/incidents/${encodeURIComponent(id)}`,
       );
-      setJob(result);
-      setSource(str(result.config.source_episode_id));
-      setFactor(str(result.config.factor));
-      setValue(num(result.config.value));
-      setRepeats(num(result.config.nuisance_repeats, 1));
-      setReplayTrial(0);
-      key.current = actionKey("incident");
+      selectJob(result);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Evidence is unavailable.");
+    } finally {
+      setPending(false);
     }
   }
   const pairs = job?.pairs || [];
@@ -321,7 +357,7 @@ export function IncidentWorkbench({
                   : "Evidence is inconclusive";
   return (
     <Drawer
-      title="Fork this failure"
+      title={view === "saved" ? "Saved experiments" : "Fork this failure"}
       eyebrow="CONTROLLED INITIAL-SCENE EXPERIMENT"
       onClose={onClose}
       wide
@@ -329,14 +365,84 @@ export function IncidentWorkbench({
       <div className="fork-intro">
         <GitBranch size={25} />
         <div>
-          <p>Change one scene factor. Test its total effect.</p>
+          <p>
+            {view === "saved"
+              ? "Inspect the measured intervention."
+              : "Change one scene factor. Test its total effect."}
+          </p>
           <span>
+            {view === "saved"
+              ? "Opening saved evidence starts no simulation. "
+              : ""}
             Both branches restart from the initial scene. The policy, task,
             unchanged factors and paired nuisance draws stay bound. Relevant
             initial geometry changes with your intervention.
           </span>
         </div>
       </div>
+      <div
+        className="fork-view-switch"
+        role="group"
+        aria-label="Experiment workspace"
+      >
+        <button
+          className="button button-quiet"
+          aria-pressed={view === "saved"}
+          onClick={() => setView("saved")}
+        >
+          Saved experiments{historyLoaded ? ` (${history.length})` : ""}
+        </button>
+        <button
+          className="button button-quiet"
+          aria-pressed={view === "new"}
+          onClick={() => setView("new")}
+        >
+          New experiment
+        </button>
+      </div>
+      {view === "saved" ? (
+        <section className="fork-history">
+          <Eyebrow>RETAINED DIAGNOSTIC RUNS</Eyebrow>
+          <p className="fork-history-caption">
+            All outcomes are retained. A completed run with a planner receipt
+            opens first when available.
+          </p>
+          {!historyLoaded ? (
+            <Loading label="Loading saved experiments" />
+          ) : !history.length ? (
+            <p className="drawer-intro">
+              No saved experiments for this campaign.
+            </p>
+          ) : (
+            history.map((item) => (
+              <button
+                key={item.id}
+                disabled={busy || !context}
+                aria-pressed={item.id === job?.id}
+                onClick={() => void inspect(item.id)}
+              >
+                <span>
+                  <strong>
+                    {human(item.config.factor)} →{" "}
+                    {valueText(str(item.config.factor), item.config.value)}
+                  </strong>
+                  <small>
+                    {item.config.planner_receipt_sha
+                      ? "Planner receipt · "
+                      : ""}
+                    {num(item.config.nuisance_repeats)} fresh paired draws ·{" "}
+                    {item.id}
+                  </small>
+                </span>
+                <Status
+                  value={item.id === job?.id ? job.status : item.status}
+                />
+                <ArrowRight size={14} />
+              </button>
+            ))
+          )}
+        </section>
+      ) : null}
       <div className="fork-scope">
         <span className="mono">DIAGNOSTIC ONLY</span>
         <p>
@@ -358,191 +464,193 @@ export function IncidentWorkbench({
           }
         />
       ) : null}
-      {!context && !error ? (
-        <Loading label="Binding eligible development incidents" />
-      ) : context?.sources.length ? (
-        <>
-          <div className="fork-form">
-            <label className="fork-source-label">
-              INCIDENT SOURCE
-              <select
-                aria-label="Incident source"
-                value={source}
-                disabled={busy}
-                onChange={(e) => {
-                  setSource(e.target.value);
-                  key.current = actionKey("incident");
-                }}
-              >
-                {context.sources.map((item) => (
-                  <option
-                    key={item.source_episode_id}
-                    value={item.source_episode_id}
-                  >
-                    {item.name || human(item.terminal_reason)} ·{" "}
-                    {item.source_episode_id.slice(-14)}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <div className="fork-controls-grid">
-              <label>
-                CHANGE ONE FACTOR
+      {view === "new" ? (
+        !context && !error ? (
+          <Loading label="Binding eligible development incidents" />
+        ) : context?.sources.length ? (
+          <>
+            <div className="fork-form">
+              <label className="fork-source-label">
+                INCIDENT SOURCE
                 <select
-                  aria-label="Intervention factor"
-                  value={factor}
-                  disabled={busy}
-                  onChange={(e) => changeFactor(e.target.value)}
-                >
-                  {Object.keys(context.factor_spec).map((name) => (
-                    <option key={name} value={name}>
-                      {human(name)}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                FRESH PAIRED DRAWS
-                <select
-                  aria-label="Fresh paired draws"
-                  value={repeats}
+                  aria-label="Incident source"
+                  value={source}
                   disabled={busy}
                   onChange={(e) => {
-                    setRepeats(Number(e.target.value));
+                    setSource(e.target.value);
                     key.current = actionKey("incident");
                   }}
                 >
-                  {[1, 5, 10, 20].map((n) => (
-                    <option key={n} value={n}>
-                      {n} + source-seed anchor
+                  {context.sources.map((item) => (
+                    <option
+                      key={item.source_episode_id}
+                      value={item.source_episode_id}
+                    >
+                      {item.name || human(item.terminal_reason)} ·{" "}
+                      {item.source_episode_id.slice(-14)}
                     </option>
                   ))}
                 </select>
               </label>
-            </div>
-            <div className="fork-value-heading">
-              <span>
-                Source{" "}
-                <strong className="mono">{valueText(factor, from)}</strong>
-              </span>
-              <ArrowRight size={17} />
-              <label htmlFor="fork-value">
-                Intervention{" "}
-                <strong className="mono">{valueText(factor, value)}</strong>
-              </label>
-              <button
-                className="text-button"
+              <div className="fork-controls-grid">
+                <label>
+                  CHANGE ONE FACTOR
+                  <select
+                    aria-label="Intervention factor"
+                    value={factor}
+                    disabled={busy}
+                    onChange={(e) => changeFactor(e.target.value)}
+                  >
+                    {Object.keys(context.factor_spec).map((name) => (
+                      <option key={name} value={name}>
+                        {human(name)}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label>
+                  FRESH PAIRED DRAWS
+                  <select
+                    aria-label="Fresh paired draws"
+                    value={repeats}
+                    disabled={busy}
+                    onChange={(e) => {
+                      setRepeats(Number(e.target.value));
+                      key.current = actionKey("incident");
+                    }}
+                  >
+                    {[1, 5, 10, 20].map((n) => (
+                      <option key={n} value={n}>
+                        {n} + source-seed anchor
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+              <div className="fork-value-heading">
+                <span>
+                  Source{" "}
+                  <strong className="mono">{valueText(factor, from)}</strong>
+                </span>
+                <ArrowRight size={17} />
+                <label htmlFor="fork-value">
+                  Intervention{" "}
+                  <strong className="mono">{valueText(factor, value)}</strong>
+                </label>
+                <button
+                  className="text-button"
+                  disabled={busy}
+                  onClick={() => {
+                    setValue(f?.nominal ?? 0);
+                    key.current = actionKey("incident");
+                  }}
+                >
+                  <RotateCcw size={12} />
+                  Use nominal
+                </button>
+              </div>
+              <input
+                id="fork-value"
+                aria-label={`Intervention ${human(factor)}`}
+                type="range"
+                min={f?.min}
+                max={f?.max}
+                step={factor === "friction" ? 0.01 : f?.step}
+                value={value}
                 disabled={busy}
-                onClick={() => {
-                  setValue(f?.nominal ?? 0);
+                onChange={(e) => {
+                  setValue(Number(e.target.value));
                   key.current = actionKey("incident");
                 }}
-              >
-                <RotateCcw size={12} />
-                Use nominal
-              </button>
-            </div>
-            <input
-              id="fork-value"
-              aria-label={`Intervention ${human(factor)}`}
-              type="range"
-              min={f?.min}
-              max={f?.max}
-              step={factor === "friction" ? 0.01 : f?.step}
-              value={value}
-              disabled={busy}
-              onChange={(e) => {
-                setValue(Number(e.target.value));
-                key.current = actionKey("incident");
-              }}
-            />
-            <div className="fork-range">
-              <span>{valueText(factor, f?.min)}</span>
-              <span>{valueText(factor, f?.max)}</span>
-            </div>
-            <div className="fork-invariants">
-              <span>
-                <Check size={12} />
-                Frozen checkpoint {shortHash(selected?.checkpoint_hash)}
-              </span>
-              <span>
-                <Check size={12} />
-                Same task & paired nuisance
-              </span>
-              <span>
-                <Check size={12} />
-                One factor changes
-              </span>
-            </div>
-            <div className="fork-submit">
-              <span>
-                {value === from
-                  ? "Choose a value different from the source."
-                  : `${2 * (repeats + 1)} physical episodes · ${repeats} fresh pairs + 1 anchor`}
-              </span>
-              <button
-                className="button button-primary"
-                disabled={!valid || busy}
-                onClick={() => void start()}
-              >
-                {busy ? (
-                  <LoaderCircle size={15} className="spin" />
-                ) : (
-                  <Play size={15} />
-                )}
-                {pending
-                  ? "Submitting…"
-                  : running(job)
-                    ? "Simulation running"
-                    : "Run paired experiment"}
-              </button>
-            </div>
-          </div>
-          <div
-            className="fork-branch-map"
-            aria-label="Tested and untested interventions"
-          >
-            <div className="fork-node">
-              <span className="mono">SOURCE INCIDENT</span>
-              <strong>{human(selected?.terminal_reason)}</strong>
-              <span>Recorded failure</span>
-            </div>
-            <div className="fork-branch-lines" aria-hidden="true" />
-            <div className="fork-branch-options">
-              <div
-                className={`fork-node ${selectedMatchesJob && completed ? "tested" : "untested"}`}
-              >
-                <GitBranch size={15} />
-                <div>
-                  <strong>
-                    {human(factor)} → {valueText(factor, value)}
-                  </strong>
-                  <span>
-                    {selectedMatchesJob &&
-                    completed &&
-                    job.validity?.valid === true
-                      ? `Measured: ${sourcePasses}/${fresh.length} → ${interventionPasses}/${fresh.length} fresh successes`
-                      : selectedMatchesJob && running(job)
-                        ? "This intervention is running · outcomes pending"
-                        : "Selected intervention · not yet tested"}
-                  </span>
-                </div>
+              />
+              <div className="fork-range">
+                <span>{valueText(factor, f?.min)}</span>
+                <span>{valueText(factor, f?.max)}</span>
               </div>
-              <div className="fork-node untested">
-                <X size={14} />
-                <div>
-                  <strong>Other combinations</strong>
-                  <span>Untested · no inferred outcome</span>
+              <div className="fork-invariants">
+                <span>
+                  <Check size={12} />
+                  Frozen checkpoint {shortHash(selected?.checkpoint_hash)}
+                </span>
+                <span>
+                  <Check size={12} />
+                  Same task & paired nuisance
+                </span>
+                <span>
+                  <Check size={12} />
+                  One factor changes
+                </span>
+              </div>
+              <div className="fork-submit">
+                <span>
+                  {value === from
+                    ? "Choose a value different from the source."
+                    : `${2 * (repeats + 1)} physical episodes · ${repeats} fresh pairs + 1 anchor`}
+                </span>
+                <button
+                  className="button button-primary"
+                  disabled={!valid || busy}
+                  onClick={() => void start()}
+                >
+                  {busy ? (
+                    <LoaderCircle size={15} className="spin" />
+                  ) : (
+                    <Play size={15} />
+                  )}
+                  {pending
+                    ? "Submitting…"
+                    : running(job)
+                      ? "Simulation running"
+                      : "Run paired experiment"}
+                </button>
+              </div>
+            </div>
+            <div
+              className="fork-branch-map"
+              aria-label="Tested and untested interventions"
+            >
+              <div className="fork-node">
+                <span className="mono">SOURCE INCIDENT</span>
+                <strong>{human(selected?.terminal_reason)}</strong>
+                <span>Recorded failure</span>
+              </div>
+              <div className="fork-branch-lines" aria-hidden="true" />
+              <div className="fork-branch-options">
+                <div
+                  className={`fork-node ${selectedMatchesJob && completed ? "tested" : "untested"}`}
+                >
+                  <GitBranch size={15} />
+                  <div>
+                    <strong>
+                      {human(factor)} → {valueText(factor, value)}
+                    </strong>
+                    <span>
+                      {selectedMatchesJob &&
+                      completed &&
+                      job.validity?.valid === true
+                        ? `Measured: ${sourcePasses}/${fresh.length} → ${interventionPasses}/${fresh.length} fresh successes`
+                        : selectedMatchesJob && running(job)
+                          ? "This intervention is running · outcomes pending"
+                          : "Selected intervention · not yet tested"}
+                    </span>
+                  </div>
+                </div>
+                <div className="fork-node untested">
+                  <X size={14} />
+                  <div>
+                    <strong>Other combinations</strong>
+                    <span>Untested · no inferred outcome</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </>
-      ) : context ? (
-        <p className="drawer-intro">
-          This campaign has no eligible development failure. Select the recorded
-          v2 campaign to open its incident tests.
-        </p>
+          </>
+        ) : context ? (
+          <p className="drawer-intro">
+            This campaign has no eligible development failure. Select the
+            recorded v2 campaign to open its incident tests.
+          </p>
+        ) : null
       ) : null}
       {job ? (
         <section className="fork-results">
@@ -573,6 +681,7 @@ export function IncidentWorkbench({
             Source {str(job.config.source_episode_id)} · checkpoint{" "}
             {shortHash(str(job.config.checkpoint_hash))}
           </p>
+          {completed ? <IncidentExport key={job.id} id={job.id} /> : null}
           <p
             className="fork-progress"
             role="status"
@@ -755,33 +864,10 @@ export function IncidentWorkbench({
               </table>
             </div>
           ) : null}
-          {completed ? <IncidentExport key={job.id} id={job.id} /> : null}
           <JsonDetails
             value={job}
             label="Inspect run provenance, pairing and artifact hashes"
           />
-        </section>
-      ) : null}
-      {history.length ? (
-        <section className="fork-history">
-          <Eyebrow>RETAINED DIAGNOSTIC RUNS</Eyebrow>
-          {history.map((item) => (
-            <button
-              key={item.id}
-              disabled={busy || !context}
-              onClick={() => void inspect(item.id)}
-            >
-              <span>
-                <strong>
-                  {human(item.config.factor)} →{" "}
-                  {valueText(str(item.config.factor), item.config.value)}
-                </strong>
-                <small className="mono">{item.id}</small>
-              </span>
-              <Status value={item.id === job?.id ? job.status : item.status} />
-              <ArrowRight size={14} />
-            </button>
-          ))}
         </section>
       ) : null}
     </Drawer>

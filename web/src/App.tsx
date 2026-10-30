@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Activity,
   ArrowUpRight,
@@ -43,6 +43,49 @@ export default function App() {
     "launch" | "training" | "task" | "providers" | null
   >(null);
   const [mobileNav, setMobileNav] = useState(false);
+  const sidebarRef = useRef<HTMLElement>(null);
+  const menuRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 520px)");
+    const update = () => {
+      if (!media.matches) setMobileNav(false);
+    };
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+  useEffect(() => {
+    if (!mobileNav) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    sidebarRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setMobileNav(false);
+      }
+      if (event.key !== "Tab") return;
+      const buttons = [
+        ...(sidebarRef.current?.querySelectorAll<HTMLButtonElement>(
+          "button:not(:disabled)",
+        ) || []),
+      ].filter((button) => button.getClientRects().length);
+      const first = buttons[0];
+      const last = buttons.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKey);
+      menuRef.current?.focus();
+    };
+  }, [mobileNav]);
   const activeJobs =
     bootstrap?.campaigns.filter((c) => activeStatus(c.status)).length || 0;
   const currentNav = navigation.find((n) => n.view === location.view)!;
@@ -85,8 +128,12 @@ export default function App() {
         Skip to evidence
       </a>
       <aside
+        id="primary-navigation"
+        ref={sidebarRef}
         className={`sidebar ${mobileNav ? "sidebar-open" : ""}`}
         aria-label="Primary navigation"
+        role={mobileNav ? "dialog" : undefined}
+        aria-modal={mobileNav ? true : undefined}
       >
         <div className="brand">
           <ForgeMark />
@@ -139,7 +186,13 @@ export default function App() {
           </div>
           <strong>Cartesian gantry</strong>
           <span>Original geometry · 3-axis</span>
-          <button className="text-button" onClick={() => setDrawer("task")}>
+          <button
+            className="text-button"
+            onClick={() => {
+              setMobileNav(false);
+              setDrawer("task");
+            }}
+          >
             Inspect task
             <ArrowUpRight size={12} />
           </button>
@@ -147,7 +200,10 @@ export default function App() {
         <div className="sidebar-bottom">
           <button
             className="model-routing-button"
-            onClick={() => setDrawer("providers")}
+            onClick={() => {
+              setMobileNav(false);
+              setDrawer("providers");
+            }}
           >
             <span className="nvidia-letter">N</span>
             <span>
@@ -174,12 +230,15 @@ export default function App() {
           onClick={() => setMobileNav(false)}
         />
       ) : null}
-      <div className="application-main">
+      <div className="application-main" inert={mobileNav}>
         <header className="topbar">
           <div className="topbar-breadcrumb">
             <button
               className="icon-button mobile-menu"
+              ref={menuRef}
               aria-label="Open navigation"
+              aria-expanded={mobileNav}
+              aria-controls="primary-navigation"
               onClick={() => setMobileNav(true)}
             >
               <Menu size={19} />

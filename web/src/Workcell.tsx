@@ -87,7 +87,7 @@ export function Workcell({
           boundaries[selectedBoundary] || sourceCampaign.counterexample,
       }
     : null;
-  const [forkOpen, setForkOpen] = useState(false);
+  const [forkOpen, setForkOpen] = useState<"saved" | "new" | null>(null);
   const [cameraFailedFor, setCameraFailedFor] = useState("");
   const { episode: incident } = useEpisode(
     campaign?.counterexample?.minimized_episode_id,
@@ -241,8 +241,16 @@ export function Workcell({
               </div>
               <div className="incident-fork-action">
                 <button
+                  className="button button-quiet"
+                  onClick={() => setForkOpen("saved")}
+                  disabled={!campaign.counterexample}
+                >
+                  View saved experiments
+                  <ArrowUpRight size={16} />
+                </button>
+                <button
                   className="button button-primary"
-                  onClick={() => setForkOpen(true)}
+                  onClick={() => setForkOpen("new")}
                   disabled={!campaign.counterexample}
                 >
                   <GitBranch size={18} />
@@ -381,7 +389,8 @@ export function Workcell({
             <IncidentWorkbench
               campaign={sourceCampaign!}
               sourceId={campaign.counterexample?.minimized_episode_id}
-              onClose={() => setForkOpen(false)}
+              initialView={forkOpen}
+              onClose={() => setForkOpen(null)}
               camera={camera}
               onCamera={onCamera}
             />

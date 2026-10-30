@@ -4832,10 +4832,12 @@ svg {
 @media (max-width: 520px) {
   .sidebar {
     width: 225px;
+    visibility: hidden;
     transform: translateX(-100%);
     transition: transform 0.18s ease-out;
   }
   .sidebar.sidebar-open {
+    visibility: visible;
     transform: translateX(0);
   }
   .brand {
@@ -11084,6 +11086,28 @@ kbd {
 .fork-history small {
   color: #a0bbcc;
   font-size: 10px;
+}
+.incident-fork-action > .button + .button {
+  margin-top: 8px;
+}
+.fork-view-switch {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.fork-view-switch [aria-pressed="true"],
+.fork-history > button[aria-pressed="true"] {
+  border-color: var(--cyan);
+  background: #183340;
+}
+.fork-history-caption {
+  color: #a0bbcc;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.fork-history small {
+  overflow-wrap: anywhere;
 }
 @media (min-width: 1600px) {
   .incident-replay .scene-canvas {
